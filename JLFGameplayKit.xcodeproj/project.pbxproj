@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2760621D1B37C571000E505D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621C1B37C571000E505D /* AppDelegate.m */; };
+		2760621F1B37C571000E505D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621E1B37C571000E505D /* main.m */; };
+		276062221B37C571000E505D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062211B37C571000E505D /* GameScene.m */; };
+		276062241B37C571000E505D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 276062231B37C571000E505D /* GameScene.sks */; };
+		276062261B37C571000E505D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276062251B37C571000E505D /* Images.xcassets */; };
+		276062291B37C571000E505D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276062271B37C571000E505D /* MainMenu.xib */; };
+		276062411B37C5AE000E505D /* JLFGKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062401B37C5AE000E505D /* JLFGKEntity.m */; };
+		276062441B37C5D2000E505D /* JLFGKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062431B37C5D2000E505D /* JLFGKComponent.m */; };
+		276062471B37C5DC000E505D /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
+		2760624A1B37C63F000E505D /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
+		2760624C1B37CE96000E505D /* ComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760624B1B37CE96000E505D /* ComponentTests.m */; };
+		2760624D1B37D06D000E505D /* JLFGKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062401B37C5AE000E505D /* JLFGKEntity.m */; };
+		2760624E1B37D06D000E505D /* JLFGKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062431B37C5D2000E505D /* JLFGKComponent.m */; };
+		2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
+		276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2760622F1B37C571000E505D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2760620E1B37C571000E505D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 276062151B37C571000E505D;
+			remoteInfo = JLFGameplayKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		276062161B37C571000E505D /* JLFGameplayKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLFGameplayKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2760621A1B37C571000E505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2760621B1B37C571000E505D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2760621C1B37C571000E505D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2760621E1B37C571000E505D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		276062201B37C571000E505D /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		276062211B37C571000E505D /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		276062231B37C571000E505D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		276062251B37C571000E505D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		276062281B37C571000E505D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLFGameplayKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		276062331B37C571000E505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2760623F1B37C5AE000E505D /* JLFGKEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKEntity.h; sourceTree = "<group>"; };
+		276062401B37C5AE000E505D /* JLFGKEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKEntity.m; sourceTree = "<group>"; };
+		276062421B37C5D2000E505D /* JLFGKComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKComponent.h; sourceTree = "<group>"; };
+		276062431B37C5D2000E505D /* JLFGKComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKComponent.m; sourceTree = "<group>"; };
+		276062451B37C5DC000E505D /* JLFGKComponentSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKComponentSystem.h; sourceTree = "<group>"; };
+		276062461B37C5DC000E505D /* JLFGKComponentSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKComponentSystem.m; sourceTree = "<group>"; };
+		276062481B37C63F000E505D /* JLFGKComponent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKComponent+Private.h"; sourceTree = "<group>"; };
+		276062491B37C63F000E505D /* JLFGKComponent+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLFGKComponent+Private.m"; sourceTree = "<group>"; };
+		2760624B1B37CE96000E505D /* ComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		276062131B37C571000E505D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2760622B1B37C571000E505D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2760620D1B37C571000E505D = {
+			isa = PBXGroup;
+			children = (
+				2760623E1B37C59C000E505D /* JLFGameplayKit */,
+				276062181B37C571000E505D /* Demo1 */,
+				276062311B37C571000E505D /* Tests */,
+				276062171B37C571000E505D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		276062171B37C571000E505D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				276062161B37C571000E505D /* JLFGameplayKit.app */,
+				2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		276062181B37C571000E505D /* Demo1 */ = {
+			isa = PBXGroup;
+			children = (
+				2760621B1B37C571000E505D /* AppDelegate.h */,
+				2760621C1B37C571000E505D /* AppDelegate.m */,
+				276062201B37C571000E505D /* GameScene.h */,
+				276062211B37C571000E505D /* GameScene.m */,
+				276062231B37C571000E505D /* GameScene.sks */,
+				276062251B37C571000E505D /* Images.xcassets */,
+				276062271B37C571000E505D /* MainMenu.xib */,
+				276062191B37C571000E505D /* Supporting Files */,
+			);
+			path = Demo1;
+			sourceTree = "<group>";
+		};
+		276062191B37C571000E505D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2760621A1B37C571000E505D /* Info.plist */,
+				2760621E1B37C571000E505D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		276062311B37C571000E505D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2760624B1B37CE96000E505D /* ComponentTests.m */,
+				276062321B37C571000E505D /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		276062321B37C571000E505D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				276062331B37C571000E505D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2760623E1B37C59C000E505D /* JLFGameplayKit */ = {
+			isa = PBXGroup;
+			children = (
+				2760623F1B37C5AE000E505D /* JLFGKEntity.h */,
+				276062401B37C5AE000E505D /* JLFGKEntity.m */,
+				276062421B37C5D2000E505D /* JLFGKComponent.h */,
+				276062431B37C5D2000E505D /* JLFGKComponent.m */,
+				276062451B37C5DC000E505D /* JLFGKComponentSystem.h */,
+				276062461B37C5DC000E505D /* JLFGKComponentSystem.m */,
+				276062481B37C63F000E505D /* JLFGKComponent+Private.h */,
+				276062491B37C63F000E505D /* JLFGKComponent+Private.m */,
+			);
+			path = JLFGameplayKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		276062151B37C571000E505D /* JLFGameplayKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276062381B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKit" */;
+			buildPhases = (
+				276062121B37C571000E505D /* Sources */,
+				276062131B37C571000E505D /* Frameworks */,
+				276062141B37C571000E505D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLFGameplayKit;
+			productName = JLFGameplayKit;
+			productReference = 276062161B37C571000E505D /* JLFGameplayKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2760622D1B37C571000E505D /* JLFGameplayKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2760623B1B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKitTests" */;
+			buildPhases = (
+				2760622A1B37C571000E505D /* Sources */,
+				2760622B1B37C571000E505D /* Frameworks */,
+				2760622C1B37C571000E505D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				276062301B37C571000E505D /* PBXTargetDependency */,
+			);
+			name = JLFGameplayKitTests;
+			productName = JLFGameplayKitTests;
+			productReference = 2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2760620E1B37C571000E505D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Jonathan Fischer";
+				TargetAttributes = {
+					276062151B37C571000E505D = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					2760622D1B37C571000E505D = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 276062151B37C571000E505D;
+					};
+				};
+			};
+			buildConfigurationList = 276062111B37C571000E505D /* Build configuration list for PBXProject "JLFGameplayKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2760620D1B37C571000E505D;
+			productRefGroup = 276062171B37C571000E505D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				276062151B37C571000E505D /* JLFGameplayKit */,
+				2760622D1B37C571000E505D /* JLFGameplayKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		276062141B37C571000E505D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276062241B37C571000E505D /* GameScene.sks in Resources */,
+				276062261B37C571000E505D /* Images.xcassets in Resources */,
+				276062291B37C571000E505D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2760622C1B37C571000E505D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		276062121B37C571000E505D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2760621F1B37C571000E505D /* main.m in Sources */,
+				276062471B37C5DC000E505D /* JLFGKComponentSystem.m in Sources */,
+				276062221B37C571000E505D /* GameScene.m in Sources */,
+				2760621D1B37C571000E505D /* AppDelegate.m in Sources */,
+				2760624A1B37C63F000E505D /* JLFGKComponent+Private.m in Sources */,
+				276062411B37C5AE000E505D /* JLFGKEntity.m in Sources */,
+				276062441B37C5D2000E505D /* JLFGKComponent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2760622A1B37C571000E505D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2760624D1B37D06D000E505D /* JLFGKEntity.m in Sources */,
+				2760624E1B37D06D000E505D /* JLFGKComponent.m in Sources */,
+				2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */,
+				276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */,
+				2760624C1B37CE96000E505D /* ComponentTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		276062301B37C571000E505D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 276062151B37C571000E505D /* JLFGameplayKit */;
+			targetProxy = 2760622F1B37C571000E505D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		276062271B37C571000E505D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276062281B37C571000E505D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		276062361B37C571000E505D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		276062371B37C571000E505D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		276062391B37C571000E505D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = JLFGameplayKit;
+			};
+			name = Debug;
+		};
+		2760623A1B37C571000E505D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = JLFGameplayKit;
+			};
+			name = Release;
+		};
+		2760623C1B37C571000E505D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = JLFGameplayKitTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLFGameplayKit.app/Contents/MacOS/JLFGameplayKit";
+			};
+			name = Debug;
+		};
+		2760623D1B37C571000E505D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = JLFGameplayKitTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLFGameplayKit.app/Contents/MacOS/JLFGameplayKit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		276062111B37C571000E505D /* Build configuration list for PBXProject "JLFGameplayKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276062361B37C571000E505D /* Debug */,
+				276062371B37C571000E505D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		276062381B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276062391B37C571000E505D /* Debug */,
+				2760623A1B37C571000E505D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2760623B1B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2760623C1B37C571000E505D /* Debug */,
+				2760623D1B37C571000E505D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2760620E1B37C571000E505D /* Project object */;
+}
