@@ -7,4 +7,6 @@
 
 @interface GameScene : SKScene
 
+@property (strong, nonatomic) SKTextureAtlas *characterAtlas;
+
 @end
