@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				27DDA57E1B38B32500E1A005 /* Assets */,
-				2760623E1B37C59C000E505D /* JLFGameplayKit */,
 				276062181B37C571000E505D /* Demo1 */,
+				2760623E1B37C59C000E505D /* JLFGameplayKit */,
 				276062311B37C571000E505D /* Tests */,
 				276062171B37C571000E505D /* Products */,
 			);
@@ -195,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		276062151B37C571000E505D /* JLFGameplayKit */ = {
+		276062151B37C571000E505D /* Demo1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 276062381B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKit" */;
+			buildConfigurationList = 276062381B37C571000E505D /* Build configuration list for PBXNativeTarget "Demo1" */;
 			buildPhases = (
 				276062121B37C571000E505D /* Sources */,
 				276062131B37C571000E505D /* Frameworks */,
@@ -207,7 +207,7 @@
 			);
 			dependencies = (
 			);
-			name = JLFGameplayKit;
+			name = Demo1;
 			productName = JLFGameplayKit;
 			productReference = 276062161B37C571000E505D /* JLFGameplayKit.app */;
 			productType = "com.apple.product-type.application";
@@ -261,7 +261,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				276062151B37C571000E505D /* JLFGameplayKit */,
+				276062151B37C571000E505D /* Demo1 */,
 				2760622D1B37C571000E505D /* JLFGameplayKitTests */,
 			);
 		};
@@ -326,7 +326,7 @@
 /* Begin PBXTargetDependency section */
 		276062301B37C571000E505D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 276062151B37C571000E505D /* JLFGameplayKit */;
+			target = 276062151B37C571000E505D /* Demo1 */;
 			targetProxy = 2760622F1B37C571000E505D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +492,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		276062381B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKit" */ = {
+		276062381B37C571000E505D /* Build configuration list for PBXNativeTarget "Demo1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				276062391B37C571000E505D /* Debug */,
