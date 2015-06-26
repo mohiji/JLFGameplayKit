@@ -27,6 +27,8 @@
 		27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */; };
 		27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4E1B3C8C760088B785 /* CGPointMath.m */; };
 		27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */; };
+		27FE7D551B3CC35A0088B785 /* WanderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D541B3CC35A0088B785 /* WanderComponent.m */; };
+		27FE7D581B3CC7C60088B785 /* BouncyAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D571B3CC7C60088B785 /* BouncyAnimationComponent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		27FE7D4E1B3C8C760088B785 /* CGPointMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointMath.m; sourceTree = "<group>"; };
 		27FE7D501B3C8FFF0088B785 /* CharacterAnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterAnimationComponent.h; sourceTree = "<group>"; };
 		27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterAnimationComponent.m; sourceTree = "<group>"; };
+		27FE7D531B3CC35A0088B785 /* WanderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WanderComponent.h; sourceTree = "<group>"; };
+		27FE7D541B3CC35A0088B785 /* WanderComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WanderComponent.m; sourceTree = "<group>"; };
+		27FE7D561B3CC7C60088B785 /* BouncyAnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncyAnimationComponent.h; sourceTree = "<group>"; };
+		27FE7D571B3CC7C60088B785 /* BouncyAnimationComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncyAnimationComponent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 			children = (
 				2760621B1B37C571000E505D /* AppDelegate.h */,
 				2760621C1B37C571000E505D /* AppDelegate.m */,
+				27FE7D561B3CC7C60088B785 /* BouncyAnimationComponent.h */,
+				27FE7D571B3CC7C60088B785 /* BouncyAnimationComponent.m */,
 				27FE7D501B3C8FFF0088B785 /* CharacterAnimationComponent.h */,
 				27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */,
 				27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */,
@@ -126,6 +134,8 @@
 				27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */,
 				272C94C81B3BC4920037FC7F /* SpriteComponent.h */,
 				272C94C91B3BC4920037FC7F /* SpriteComponent.m */,
+				27FE7D531B3CC35A0088B785 /* WanderComponent.h */,
+				27FE7D541B3CC35A0088B785 /* WanderComponent.m */,
 				276062251B37C571000E505D /* Images.xcassets */,
 				276062271B37C571000E505D /* MainMenu.xib */,
 				276062191B37C571000E505D /* Supporting Files */,
@@ -284,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */,
+				27FE7D581B3CC7C60088B785 /* BouncyAnimationComponent.m in Sources */,
 				27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */,
 				2760621F1B37C571000E505D /* main.m in Sources */,
 				276062471B37C5DC000E505D /* JLFGKComponentSystem.m in Sources */,
@@ -291,6 +302,7 @@
 				2760621D1B37C571000E505D /* AppDelegate.m in Sources */,
 				2760624A1B37C63F000E505D /* JLFGKComponent+Private.m in Sources */,
 				276062411B37C5AE000E505D /* JLFGKEntity.m in Sources */,
+				27FE7D551B3CC35A0088B785 /* WanderComponent.m in Sources */,
 				272C94CA1B3BC4920037FC7F /* SpriteComponent.m in Sources */,
 				27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */,
 				276062441B37C5D2000E505D /* JLFGKComponent.m in Sources */,
