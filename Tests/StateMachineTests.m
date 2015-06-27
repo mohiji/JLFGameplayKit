@@ -230,4 +230,13 @@
     XCTAssert(stateThree.willLeaveStateCalled);
 }
 
+
+- (void)testStateMachinePropertySet
+{
+    StateOne *stateOne = [StateOne state];
+    JLFGKStateMachine *machine = [JLFGKStateMachine stateMachineWithStates:@[stateOne]];
+    [machine enterState:[StateOne class]];
+    XCTAssertEqualObjects(stateOne.stateMachine, machine);
+}
+
 @end

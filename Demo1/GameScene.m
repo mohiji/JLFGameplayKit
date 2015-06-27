@@ -95,7 +95,7 @@
     self.lastUpdateTime = currentTime;
 
     CFTimeInterval deltaTime = currentTime - lastUpdate;
-    if (deltaTime > 0) {
+    if (deltaTime < 1.0f) {
         [self.playerEntity updateWithDeltaTime:deltaTime];
         for (JLFGKEntity *entity in self.otherCharacters) {
             [entity updateWithDeltaTime:deltaTime];

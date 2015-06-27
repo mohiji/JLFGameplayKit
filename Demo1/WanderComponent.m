@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Jonathan Fischer. All rights reserved.
 //
 
-#import "WanderComponent.h"
 #import "JLFGKEntity.h"
+#import "JLFGKStateMachine.h"
+
+#import "WanderComponent.h"
 #import "MoveComponent.h"
 #import "CGPointMath.h"
 
@@ -17,12 +19,102 @@ static CGFloat waitTime()
     return 1.0f + (arc4random_uniform(3000) / 1000.0f);
 }
 
-@interface WanderComponent ()
+@interface WaitingState : JLFGKState
 
-@property (assign, nonatomic) CGFloat waitingTimeLeft;
-@property (assign, nonatomic) CGFloat walkingTimeLeft;
+- (id)initWithComponent:(JLFGKComponent *)move;
+
+@property (weak, nonatomic) JLFGKComponent *component;
+@property (assign, nonatomic) CFTimeInterval timeRemaining;
+
+@end
+
+@interface WalkingState : JLFGKState
+
+- (id)initWithComponent:(JLFGKComponent *)component;
+
+@property (weak, nonatomic) JLFGKComponent *component;
+@property (assign, nonatomic) CFTimeInterval timeRemaining;
 @property (assign, nonatomic) CGPoint direction;
 
+@end
+
+@implementation WaitingState
+
+- (id)initWithComponent:(JLFGKComponent *)component
+{
+    self = [super init];
+    if (self != nil) {
+        self.component = component;
+    }
+    return self;
+}
+
+- (BOOL)isValidNextState:(Class)stateClass
+{
+    return stateClass == [WalkingState class];
+}
+
+- (void)didEnterWithPreviousState:(JLFGKState *)previousState
+{
+    self.timeRemaining = waitTime();
+
+    MoveComponent *move = (MoveComponent *)[self.component.entity componentForClass:[MoveComponent class]];
+    move.moving = NO;
+}
+
+- (void)updateWithDeltaTime:(CFTimeInterval)seconds
+{
+    self.timeRemaining -= seconds;
+    MoveComponent *move = (MoveComponent *)[self.component.entity componentForClass:[MoveComponent class]];
+    move.moving = NO;
+
+    if (self.timeRemaining <= 0.0f) {
+        [self.stateMachine enterState:[WalkingState class]];
+    }
+}
+
+@end
+
+@implementation WalkingState
+
+- (id)initWithComponent:(JLFGKComponent *)component
+{
+    self = [super init];
+    if (self != nil) {
+        self.component = component;
+    }
+    return self;
+}
+
+- (BOOL)isValidNextState:(Class)stateClass
+{
+    return stateClass == [WaitingState class];
+}
+
+- (void)didEnterWithPreviousState:(JLFGKState *)previousState
+{
+    self.timeRemaining = waitTime();
+    int degrees = arc4random_uniform(360);
+    self.direction = CGPointMake(cosf(degrees * M_PI / 180.0f), sinf(degrees * M_PI / 180.0f));
+}
+
+- (void)updateWithDeltaTime:(CFTimeInterval)seconds
+{
+    self.timeRemaining -= seconds;
+    if (self.timeRemaining <= 0.0f) {
+        [self.stateMachine enterState:[WaitingState class]];
+    }
+
+    MoveComponent *move = (MoveComponent *)[self.component.entity componentForClass:[MoveComponent class]];
+
+    CGPoint offset = CGPointScale(self.direction, 50.0f);
+    move.moveTarget = CGPointAdd(offset, move.lastLocation);
+    move.moving = YES;
+}
+@end
+
+@interface WanderComponent ()
+@property (strong, nonatomic) JLFGKStateMachine *stateMachine;
 @end
 
 @implementation WanderComponent
@@ -31,38 +123,17 @@ static CGFloat waitTime()
 {
     self = [super init];
     if (self != nil) {
-        self.waitingTimeLeft = waitTime();
+        WaitingState *wait = [[WaitingState alloc] initWithComponent:self];
+        WalkingState *walk = [[WalkingState alloc] initWithComponent:self];
+        self.stateMachine = [JLFGKStateMachine stateMachineWithStates:@[wait, walk]];
+        [self.stateMachine enterState:[WaitingState class]];
     }
     return self;
 }
 
 - (void)updateWithDeltaTime:(NSTimeInterval)seconds
 {
-    if (self.waitingTimeLeft > 0) {
-        self.waitingTimeLeft -= seconds;
-
-        if (self.waitingTimeLeft < 0) {
-            self.waitingTimeLeft = 0.0f;
-            self.walkingTimeLeft = waitTime();
-
-            int degrees = arc4random_uniform(360);
-            self.direction = CGPointMake(cosf(degrees * M_PI / 180.0f), sinf(degrees * M_PI / 180.0f));
-        }
-    }
-
-    if (self.walkingTimeLeft > 0) {
-        MoveComponent *move = (MoveComponent *)[self.entity componentForClass:[MoveComponent class]];
-        self.walkingTimeLeft -= seconds;
-        if (self.walkingTimeLeft > 0) {
-            CGPoint offset = CGPointScale(self.direction, 50.0f);
-            move.moveTarget = CGPointAdd(offset, move.lastLocation);
-            move.moving = YES;
-        } else {
-            move.moving = NO;
-            self.walkingTimeLeft = 0.0f;
-            self.waitingTimeLeft = waitTime();
-        }
-    }
+    [self.stateMachine updateWithDeltaTime:seconds];
 }
 
 @end

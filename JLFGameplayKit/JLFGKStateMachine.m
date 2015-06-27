@@ -7,6 +7,7 @@
 //
 
 #import "JLFGKStateMachine.h"
+#import "JLFGKState+Private.h"
 @import ObjectiveC;
 
 @interface JLFGKStateMachine ()
@@ -48,6 +49,7 @@
                                             valueOptions:NSMapTableStrongMemory];
 
         for (JLFGKState *state in states) {
+            state.stateMachine = self;
             [self.states setObject:state forKey:[state class]];
         }
     }
