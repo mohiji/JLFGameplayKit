@@ -18,7 +18,7 @@
 
 + (instancetype)entity
 {
-    return [[JLFGKEntity alloc] init];
+    return [[[self class] alloc] init];
 }
 
 - (instancetype)init
