@@ -13,4 +13,8 @@
 
 - (id)initWithBaseTextureName:(NSString *)baseTextureName characterAtlas:(SKTextureAtlas *)atlas;
 
+- (BOOL)hasWavingAnimation;
+- (void)startWaving;
+- (void)stopWaving;
+
 @end

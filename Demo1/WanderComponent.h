@@ -11,4 +11,6 @@
 
 @interface WanderComponent : JLFGKComponent
 
+@property (assign, nonatomic) BOOL canWave;
+
 @end

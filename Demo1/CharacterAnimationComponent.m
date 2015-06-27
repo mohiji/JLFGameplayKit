@@ -45,6 +45,7 @@ static NSString *directionForFacing(AnimationFacing facing)
 @property (assign, nonatomic) AnimationFacing facing;
 @property (assign, nonatomic) CFTimeInterval animationTime;
 
+@property (assign, nonatomic) BOOL isWaving;
 
 @end
 
@@ -72,34 +73,62 @@ static NSString *directionForFacing(AnimationFacing facing)
         SKSpriteNode *node = c.sprite;
 
         NSString *textureName = @"stand-down";
-        // Is the entity moving? If not, just make sure it's using the right standing texture
-        if (!m.moving) {
-            self.wasMoving = NO;
-            textureName = [NSString stringWithFormat:@"stand-%@", directionForFacing(self.facing)];
+        if (self.isWaving) {
+            self.animationTime += seconds;
+            int animationFrame = (int)floor(self.animationTime / 0.2) % 2 + 1;
+            textureName = [NSString stringWithFormat:@"wave-%d", animationFrame];
         } else {
-            // The entity's moving. If it wasn't moving last frame, reset the movement timer.
-            if (!self.wasMoving) {
-                self.animationTime = 0;
-                self.wasMoving = YES;
-            } else {
-                self.animationTime += seconds;
-            }
 
-            CGPoint direction = m.moveDirection;
-            if (fabs(direction.x) > fabs(direction.y)) {
-                self.facing = (direction.x > 0) ? FacingRight : FacingLeft;
+            // Is the entity moving? If not, just make sure it's using the right standing texture
+            if (!m.moving) {
+                self.wasMoving = NO;
+                textureName = [NSString stringWithFormat:@"stand-%@", directionForFacing(self.facing)];
             } else {
-                self.facing = (direction.y > 0) ? FacingUp : FacingDown;
-            }
+                // The entity's moving. If it wasn't moving last frame, reset the movement timer.
+                if (!self.wasMoving) {
+                    self.animationTime = 0;
+                    self.wasMoving = YES;
+                } else {
+                    self.animationTime += seconds;
+                }
 
-            NSString *dirName = directionForFacing(self.facing);
-            int animationFrame = (int)floor(self.animationTime / 0.2) % 4 + 1;
-            textureName = [NSString stringWithFormat:@"walk-%@-%d", dirName, animationFrame];
+                CGPoint direction = m.moveDirection;
+                if (fabs(direction.x) > fabs(direction.y)) {
+                    self.facing = (direction.x > 0) ? FacingRight : FacingLeft;
+                } else {
+                    self.facing = (direction.y > 0) ? FacingUp : FacingDown;
+                }
+
+                NSString *dirName = directionForFacing(self.facing);
+                int animationFrame = (int)floor(self.animationTime / 0.2) % 4 + 1;
+                textureName = [NSString stringWithFormat:@"walk-%@-%d", dirName, animationFrame];
+            }
         }
 
         textureName = [NSString stringWithFormat:@"%@-%@", self.baseTextureName, textureName];
         node.texture = [self.atlas textureNamed:textureName];
     }
+}
+
+- (BOOL)hasWavingAnimation
+{
+    return [self.baseTextureName isEqualToString:@"man"];
+}
+
+- (void)startWaving
+{
+    if (![self hasWavingAnimation]) {
+        return;
+    }
+
+    self.isWaving = YES;
+    self.animationTime = 0;
+}
+
+- (void)stopWaving
+{
+    self.isWaving = NO;
+    self.animationTime = 0;
 }
 
 @end
