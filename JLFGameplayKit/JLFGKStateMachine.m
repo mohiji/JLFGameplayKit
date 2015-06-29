@@ -56,6 +56,12 @@
     return self;
 }
 
+- (instancetype)init
+{
+    NSAssert(false, @"JLFGKStateMachine must be initialized using -initWithStates:");
+    return nil;
+}
+
 - (BOOL)canEnterState:(Class)stateClass
 {
     // Can't switch to a state that isn't present in self.states

@@ -24,8 +24,7 @@
 
 - (BOOL)isValidNextState:(Class)stateClass
 {
-    // TODO: Find out what the real GKState class default is.
-    return NO;
+    return YES;
 }
 
 - (void)didEnterWithPreviousState:(JLFGKState *)previousState
