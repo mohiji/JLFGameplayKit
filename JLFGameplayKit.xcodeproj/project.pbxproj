@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2712E4371B3E0ACE00B5A5F1 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
+		271C10881B44B0C900BDFEEB /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
+		271C108B1B44B25400BDFEEB /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
 		272C94C71B3BC3030037FC7F /* Characters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 272C94C61B3BC3030037FC7F /* Characters.atlas */; };
 		272C94CA1B3BC4920037FC7F /* SpriteComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C94C91B3BC4920037FC7F /* SpriteComponent.m */; };
 		2760621D1B37C571000E505D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621C1B37C571000E505D /* AppDelegate.m */; };
@@ -30,6 +32,11 @@
 		27B7E4C31B3E064600705D17 /* StateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */; };
 		27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
 		27B7E4C71B3E079A00705D17 /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
+		27B9C3C61B45C0B600B61989 /* JLFGKSimplePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */; };
+		27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */; };
+		27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D343DD1B45A9F400172A4D /* PathfindingTests.m */; };
+		27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
+		27D343E11B45AA3000172A4D /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
 		27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */; };
 		27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4E1B3C8C760088B785 /* CGPointMath.m */; };
 		27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */; };
@@ -50,6 +57,10 @@
 /* Begin PBXFileReference section */
 		2712E4351B3E0ACE00B5A5F1 /* JLFGKStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKStateMachine.h; sourceTree = "<group>"; };
 		2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKStateMachine.m; sourceTree = "<group>"; };
+		271C10861B44B0C900BDFEEB /* JLFGKGraphNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGraphNode.h; sourceTree = "<group>"; };
+		271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGraphNode.m; sourceTree = "<group>"; };
+		271C10891B44B25400BDFEEB /* JLFGKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGraph.h; sourceTree = "<group>"; };
+		271C108A1B44B25400BDFEEB /* JLFGKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGraph.m; sourceTree = "<group>"; };
 		272C94C61B3BC3030037FC7F /* Characters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Characters.atlas; sourceTree = "<group>"; };
 		272C94C81B3BC4920037FC7F /* SpriteComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteComponent.h; sourceTree = "<group>"; };
 		272C94C91B3BC4920037FC7F /* SpriteComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteComponent.m; sourceTree = "<group>"; };
@@ -79,6 +90,10 @@
 		27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateMachineTests.m; sourceTree = "<group>"; };
 		27B7E4C51B3E079A00705D17 /* JLFGKState+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKState+Private.h"; sourceTree = "<group>"; };
 		27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLFGKState+Private.m"; sourceTree = "<group>"; };
+		27B9C3C41B45C0B600B61989 /* JLFGKSimplePriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKSimplePriorityQueue.h; sourceTree = "<group>"; };
+		27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKSimplePriorityQueue.m; sourceTree = "<group>"; };
+		27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriorityQueueTests.m; sourceTree = "<group>"; };
+		27D343DD1B45A9F400172A4D /* PathfindingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingTests.m; sourceTree = "<group>"; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
 		27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
@@ -169,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				2760624B1B37CE96000E505D /* ComponentTests.m */,
+				27D343DD1B45A9F400172A4D /* PathfindingTests.m */,
+				27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */,
 				27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */,
 				276062321B37C571000E505D /* Supporting Files */,
 			);
@@ -194,6 +211,12 @@
 				276062461B37C5DC000E505D /* JLFGKComponentSystem.m */,
 				2760623F1B37C5AE000E505D /* JLFGKEntity.h */,
 				276062401B37C5AE000E505D /* JLFGKEntity.m */,
+				271C10891B44B25400BDFEEB /* JLFGKGraph.h */,
+				271C108A1B44B25400BDFEEB /* JLFGKGraph.m */,
+				271C10861B44B0C900BDFEEB /* JLFGKGraphNode.h */,
+				271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */,
+				27B9C3C41B45C0B600B61989 /* JLFGKSimplePriorityQueue.h */,
+				27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */,
 				27B7E4BD1B3E057500705D17 /* JLFGKState.h */,
 				27B7E4BE1B3E057500705D17 /* JLFGKState.m */,
 				27B7E4C51B3E079A00705D17 /* JLFGKState+Private.h */,
@@ -326,9 +349,12 @@
 				27B7E4C71B3E079A00705D17 /* JLFGKState+Private.m in Sources */,
 				27FE7D551B3CC35A0088B785 /* WanderComponent.m in Sources */,
 				272C94CA1B3BC4920037FC7F /* SpriteComponent.m in Sources */,
+				271C108B1B44B25400BDFEEB /* JLFGKGraph.m in Sources */,
 				27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */,
+				271C10881B44B0C900BDFEEB /* JLFGKGraphNode.m in Sources */,
 				27B7E4BF1B3E057500705D17 /* JLFGKState.m in Sources */,
 				276062441B37C5D2000E505D /* JLFGKComponent.m in Sources */,
+				27B9C3C61B45C0B600B61989 /* JLFGKSimplePriorityQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +366,14 @@
 				2760624D1B37D06D000E505D /* JLFGKEntity.m in Sources */,
 				279C7CFA1B3E59A400456EE4 /* JLFGKStateMachine.m in Sources */,
 				2760624E1B37D06D000E505D /* JLFGKComponent.m in Sources */,
+				27D343E11B45AA3000172A4D /* JLFGKGraphNode.m in Sources */,
 				2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */,
 				276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */,
+				27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */,
 				27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */,
+				27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */,
 				2760624C1B37CE96000E505D /* ComponentTests.m in Sources */,
+				27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
