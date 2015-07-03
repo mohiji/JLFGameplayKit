@@ -207,4 +207,25 @@
     XCTAssertEqual(n6_n1[2], n2);
     XCTAssertEqual(n6_n1[3], n1);
 }
+
+- (void)testNoDuplicateConnections
+{
+    JLFGKGraphNode *n1, *n2;
+
+    n1 = [[JLFGKGraphNode alloc] init];
+    n2 = [[JLFGKGraphNode alloc] init];
+
+    [n1 addConnectionsToNodes:@[n2] bidirectional:YES];
+    [n2 addConnectionsToNodes:@[n1] bidirectional:YES];
+    XCTAssertEqual(n1.connectedNodes.count, 1);
+    XCTAssertEqual(n2.connectedNodes.count, 1);
+}
+
+- (void)testCantConnectNodeToItself
+{
+    JLFGKGraphNode *n1 = [[JLFGKGraphNode alloc] init];
+    [n1 addConnectionsToNodes:@[n1] bidirectional:YES];
+    XCTAssertEqual(n1.connectedNodes.count, 0);
+}
+
 @end
