@@ -42,9 +42,6 @@
 
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     self.skView.ignoresSiblingOrder = YES;
-    
-    self.skView.showsFPS = YES;
-    self.skView.showsNodeCount = YES;
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
