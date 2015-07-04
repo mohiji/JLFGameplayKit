@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27114D4A1B46031A0087655C /* Characters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 272C94C61B3BC3030037FC7F /* Characters.atlas */; };
+		27114D4B1B4627100087655C /* JLFGKSimplePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */; };
+		27114D4C1B4627100087655C /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
+		27114D4D1B4627110087655C /* JLFGKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062431B37C5D2000E505D /* JLFGKComponent.m */; };
+		27114D4E1B4627110087655C /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
+		27114D4F1B4627110087655C /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
+		27114D501B4627110087655C /* JLFGKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062401B37C5AE000E505D /* JLFGKEntity.m */; };
+		27114D511B4627110087655C /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
+		27114D521B4627110087655C /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
+		27114D531B4627110087655C /* JLFGKSimplePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */; };
+		27114D541B4627110087655C /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
+		27114D551B4627110087655C /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
+		27114D561B4627110087655C /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
+		27114D571B473D080087655C /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D401B4603150087655C /* castle.png */; };
+		27114D581B473D080087655C /* keep.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D411B4603150087655C /* keep.png */; };
+		27114D591B473D080087655C /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D421B4603150087655C /* sword.png */; };
+		27114D5A1B473D080087655C /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D431B4603150087655C /* target.png */; };
+		27114D5B1B473D080087655C /* yellow-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D441B4603150087655C /* yellow-dot.png */; };
+		27114D5C1B473D080087655C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B9C3F41B45F37500B61989 /* map.png */; };
 		2712E4371B3E0ACE00B5A5F1 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
 		271C10881B44B0C900BDFEEB /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
 		271C108B1B44B25400BDFEEB /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
@@ -28,12 +47,23 @@
 		2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
 		276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
 		279C7CFA1B3E59A400456EE4 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
+		27AA85771B47550D00AF2DDA /* PathFollowingComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA85761B47550D00AF2DDA /* PathFollowingComponent.m */; };
+		27AA857A1B47562B00AF2DDA /* BouncyComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA85791B47562B00AF2DDA /* BouncyComponent.m */; };
+		27AA857D1B47564500AF2DDA /* SpriteComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA857C1B47564500AF2DDA /* SpriteComponent.m */; };
+		27AA85801B4779C400AF2DDA /* PathFollowingComponentStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */; };
+		27AA85831B47A44F00AF2DDA /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA85821B47A44F00AF2DDA /* CGPointMath.m */; };
 		27B7E4BF1B3E057500705D17 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
 		27B7E4C31B3E064600705D17 /* StateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */; };
 		27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
 		27B7E4C71B3E079A00705D17 /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
 		27B9C3C61B45C0B600B61989 /* JLFGKSimplePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */; };
 		27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */; };
+		27B9C3D31B45F33700B61989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3D21B45F33700B61989 /* AppDelegate.m */; };
+		27B9C3D51B45F33700B61989 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3D41B45F33700B61989 /* main.m */; };
+		27B9C3D81B45F33700B61989 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3D71B45F33700B61989 /* GameScene.m */; };
+		27B9C3DA1B45F33700B61989 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 27B9C3D91B45F33700B61989 /* GameScene.sks */; };
+		27B9C3DC1B45F33700B61989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B9C3DB1B45F33700B61989 /* Images.xcassets */; };
+		27B9C3DF1B45F33700B61989 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B9C3DD1B45F33700B61989 /* MainMenu.xib */; };
 		27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D343DD1B45A9F400172A4D /* PathfindingTests.m */; };
 		27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
 		27D343E11B45AA3000172A4D /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
@@ -55,6 +85,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27114D401B4603150087655C /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = castle.png; sourceTree = "<group>"; };
+		27114D411B4603150087655C /* keep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keep.png; sourceTree = "<group>"; };
+		27114D421B4603150087655C /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
+		27114D431B4603150087655C /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		27114D441B4603150087655C /* yellow-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow-dot.png"; sourceTree = "<group>"; };
 		2712E4351B3E0ACE00B5A5F1 /* JLFGKStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKStateMachine.h; sourceTree = "<group>"; };
 		2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKStateMachine.m; sourceTree = "<group>"; };
 		271C10861B44B0C900BDFEEB /* JLFGKGraphNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGraphNode.h; sourceTree = "<group>"; };
@@ -85,6 +120,16 @@
 		276062481B37C63F000E505D /* JLFGKComponent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKComponent+Private.h"; sourceTree = "<group>"; };
 		276062491B37C63F000E505D /* JLFGKComponent+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLFGKComponent+Private.m"; sourceTree = "<group>"; };
 		2760624B1B37CE96000E505D /* ComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentTests.m; sourceTree = "<group>"; };
+		27AA85751B47550D00AF2DDA /* PathFollowingComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFollowingComponent.h; sourceTree = "<group>"; };
+		27AA85761B47550D00AF2DDA /* PathFollowingComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFollowingComponent.m; sourceTree = "<group>"; };
+		27AA85781B47562B00AF2DDA /* BouncyComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncyComponent.h; sourceTree = "<group>"; };
+		27AA85791B47562B00AF2DDA /* BouncyComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncyComponent.m; sourceTree = "<group>"; };
+		27AA857B1B47564500AF2DDA /* SpriteComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteComponent.h; sourceTree = "<group>"; };
+		27AA857C1B47564500AF2DDA /* SpriteComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteComponent.m; sourceTree = "<group>"; };
+		27AA857E1B4779C400AF2DDA /* PathFollowingComponentStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFollowingComponentStates.h; sourceTree = "<group>"; };
+		27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFollowingComponentStates.m; sourceTree = "<group>"; };
+		27AA85811B47A44F00AF2DDA /* CGPointMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
+		27AA85821B47A44F00AF2DDA /* CGPointMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointMath.m; sourceTree = "<group>"; };
 		27B7E4BD1B3E057500705D17 /* JLFGKState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKState.h; sourceTree = "<group>"; };
 		27B7E4BE1B3E057500705D17 /* JLFGKState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKState.m; sourceTree = "<group>"; };
 		27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateMachineTests.m; sourceTree = "<group>"; };
@@ -93,6 +138,17 @@
 		27B9C3C41B45C0B600B61989 /* JLFGKSimplePriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKSimplePriorityQueue.h; sourceTree = "<group>"; };
 		27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKSimplePriorityQueue.m; sourceTree = "<group>"; };
 		27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriorityQueueTests.m; sourceTree = "<group>"; };
+		27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathfindingDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B9C3D01B45F33700B61989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B9C3D11B45F33700B61989 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27B9C3D21B45F33700B61989 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27B9C3D41B45F33700B61989 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27B9C3D61B45F33700B61989 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		27B9C3D71B45F33700B61989 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		27B9C3D91B45F33700B61989 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		27B9C3DB1B45F33700B61989 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27B9C3DE1B45F33700B61989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		27B9C3F41B45F37500B61989 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		27D343DD1B45A9F400172A4D /* PathfindingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingTests.m; sourceTree = "<group>"; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
@@ -121,6 +177,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27B9C3CA1B45F33700B61989 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -131,6 +194,7 @@
 				276062181B37C571000E505D /* Demo1 */,
 				2760623E1B37C59C000E505D /* JLFGameplayKit */,
 				276062311B37C571000E505D /* Tests */,
+				27B9C3CE1B45F33700B61989 /* PathfindingDemo1 */,
 				276062171B37C571000E505D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +204,7 @@
 			children = (
 				276062161B37C571000E505D /* JLFGameplayKit.app */,
 				2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */,
+				27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,9 +292,49 @@
 			path = JLFGameplayKit;
 			sourceTree = "<group>";
 		};
+		27B9C3CE1B45F33700B61989 /* PathfindingDemo1 */ = {
+			isa = PBXGroup;
+			children = (
+				27B9C3D11B45F33700B61989 /* AppDelegate.h */,
+				27B9C3D21B45F33700B61989 /* AppDelegate.m */,
+				27AA85781B47562B00AF2DDA /* BouncyComponent.h */,
+				27AA85791B47562B00AF2DDA /* BouncyComponent.m */,
+				27AA85811B47A44F00AF2DDA /* CGPointMath.h */,
+				27AA85821B47A44F00AF2DDA /* CGPointMath.m */,
+				27B9C3D61B45F33700B61989 /* GameScene.h */,
+				27B9C3D71B45F33700B61989 /* GameScene.m */,
+				27B9C3D91B45F33700B61989 /* GameScene.sks */,
+				27AA85751B47550D00AF2DDA /* PathFollowingComponent.h */,
+				27AA85761B47550D00AF2DDA /* PathFollowingComponent.m */,
+				27AA857E1B4779C400AF2DDA /* PathFollowingComponentStates.h */,
+				27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */,
+				27AA857B1B47564500AF2DDA /* SpriteComponent.h */,
+				27AA857C1B47564500AF2DDA /* SpriteComponent.m */,
+				27B9C3DB1B45F33700B61989 /* Images.xcassets */,
+				27B9C3DD1B45F33700B61989 /* MainMenu.xib */,
+				27B9C3CF1B45F33700B61989 /* Supporting Files */,
+			);
+			path = PathfindingDemo1;
+			sourceTree = "<group>";
+		};
+		27B9C3CF1B45F33700B61989 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27B9C3D01B45F33700B61989 /* Info.plist */,
+				27B9C3D41B45F33700B61989 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		27DDA57E1B38B32500E1A005 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				27114D401B4603150087655C /* castle.png */,
+				27114D411B4603150087655C /* keep.png */,
+				27114D421B4603150087655C /* sword.png */,
+				27114D431B4603150087655C /* target.png */,
+				27114D441B4603150087655C /* yellow-dot.png */,
+				27B9C3F41B45F37500B61989 /* map.png */,
 				272C94C61B3BC3030037FC7F /* Characters.atlas */,
 			);
 			path = Assets;
@@ -273,6 +378,23 @@
 			productReference = 2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		27B9C3CC1B45F33700B61989 /* PathfindingDemo1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B9C3EC1B45F33700B61989 /* Build configuration list for PBXNativeTarget "PathfindingDemo1" */;
+			buildPhases = (
+				27B9C3C91B45F33700B61989 /* Sources */,
+				27B9C3CA1B45F33700B61989 /* Frameworks */,
+				27B9C3CB1B45F33700B61989 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PathfindingDemo1;
+			productName = PathfindingDemo1;
+			productReference = 27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -288,6 +410,9 @@
 					2760622D1B37C571000E505D = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 276062151B37C571000E505D;
+					};
+					27B9C3CC1B45F33700B61989 = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -306,6 +431,7 @@
 			targets = (
 				276062151B37C571000E505D /* Demo1 */,
 				2760622D1B37C571000E505D /* JLFGameplayKitTests */,
+				27B9C3CC1B45F33700B61989 /* PathfindingDemo1 */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +452,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9C3CB1B45F33700B61989 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B9C3DA1B45F33700B61989 /* GameScene.sks in Resources */,
+				27114D4A1B46031A0087655C /* Characters.atlas in Resources */,
+				27114D581B473D080087655C /* keep.png in Resources */,
+				27114D591B473D080087655C /* sword.png in Resources */,
+				27114D5C1B473D080087655C /* map.png in Resources */,
+				27114D5A1B473D080087655C /* target.png in Resources */,
+				27114D5B1B473D080087655C /* yellow-dot.png in Resources */,
+				27B9C3DC1B45F33700B61989 /* Images.xcassets in Resources */,
+				27114D571B473D080087655C /* castle.png in Resources */,
+				27B9C3DF1B45F33700B61989 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,11 +512,38 @@
 				27D343E11B45AA3000172A4D /* JLFGKGraphNode.m in Sources */,
 				2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */,
 				276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */,
+				27114D4B1B4627100087655C /* JLFGKSimplePriorityQueue.m in Sources */,
 				27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */,
 				27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */,
+				27114D4C1B4627100087655C /* JLFGKState+Private.m in Sources */,
 				27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */,
 				2760624C1B37CE96000E505D /* ComponentTests.m in Sources */,
 				27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9C3C91B45F33700B61989 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27114D561B4627110087655C /* JLFGKStateMachine.m in Sources */,
+				27114D551B4627110087655C /* JLFGKState+Private.m in Sources */,
+				27AA85771B47550D00AF2DDA /* PathFollowingComponent.m in Sources */,
+				27114D541B4627110087655C /* JLFGKState.m in Sources */,
+				27AA85831B47A44F00AF2DDA /* CGPointMath.m in Sources */,
+				27114D4E1B4627110087655C /* JLFGKComponent+Private.m in Sources */,
+				27114D4F1B4627110087655C /* JLFGKComponentSystem.m in Sources */,
+				27AA857D1B47564500AF2DDA /* SpriteComponent.m in Sources */,
+				27114D501B4627110087655C /* JLFGKEntity.m in Sources */,
+				27114D4D1B4627110087655C /* JLFGKComponent.m in Sources */,
+				27114D531B4627110087655C /* JLFGKSimplePriorityQueue.m in Sources */,
+				27AA85801B4779C400AF2DDA /* PathFollowingComponentStates.m in Sources */,
+				27AA857A1B47562B00AF2DDA /* BouncyComponent.m in Sources */,
+				27B9C3D51B45F33700B61989 /* main.m in Sources */,
+				27114D521B4627110087655C /* JLFGKGraphNode.m in Sources */,
+				27B9C3D81B45F33700B61989 /* GameScene.m in Sources */,
+				27B9C3D31B45F33700B61989 /* AppDelegate.m in Sources */,
+				27114D511B4627110087655C /* JLFGKGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +562,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				276062281B37C571000E505D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		27B9C3DD1B45F33700B61989 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27B9C3DE1B45F33700B61989 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -536,6 +714,32 @@
 			};
 			name = Release;
 		};
+		27B9C3ED1B45F33700B61989 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PathfindingDemo1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27B9C3EE1B45F33700B61989 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PathfindingDemo1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,6 +766,15 @@
 			buildConfigurations = (
 				2760623C1B37C571000E505D /* Debug */,
 				2760623D1B37C571000E505D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27B9C3EC1B45F33700B61989 /* Build configuration list for PBXNativeTarget "PathfindingDemo1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B9C3ED1B45F33700B61989 /* Debug */,
+				27B9C3EE1B45F33700B61989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
