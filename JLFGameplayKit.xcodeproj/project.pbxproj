@@ -77,6 +77,21 @@
 		27E256001B51DB6A00237994 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
 		27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
 		27E256021B51DB6A00237994 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
+		27E256451B51DDB800237994 /* libJLFGameplayKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */; };
+		27E256511B51DDE400237994 /* JLFGKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062431B37C5D2000E505D /* JLFGKComponent.m */; };
+		27E256521B51DDE400237994 /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
+		27E256531B51DDE400237994 /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
+		27E256541B51DDE400237994 /* JLFGKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062401B37C5AE000E505D /* JLFGKEntity.m */; };
+		27E256551B51DDE400237994 /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
+		27E256561B51DDE400237994 /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
+		27E256571B51DDE400237994 /* JLFGKSimplePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */; };
+		27E256581B51DDE400237994 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
+		27E256591B51DDE400237994 /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
+		27E2565A1B51DDE400237994 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
+		27E2565B1B51DDE700237994 /* ComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760624B1B37CE96000E505D /* ComponentTests.m */; };
+		27E2565C1B51DDE700237994 /* PathfindingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D343DD1B45A9F400172A4D /* PathfindingTests.m */; };
+		27E2565D1B51DDE700237994 /* PriorityQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */; };
+		27E2565E1B51DDE700237994 /* StateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */; };
 		27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */; };
 		27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4E1B3C8C760088B785 /* CGPointMath.m */; };
 		27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */; };
@@ -92,7 +107,26 @@
 			remoteGlobalIDString = 276062151B37C571000E505D;
 			remoteInfo = JLFGameplayKit;
 		};
+		27E256461B51DDB800237994 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2760620E1B37C571000E505D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27E256391B51DDB700237994;
+			remoteInfo = "JLFGameplayKit-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		27E256381B51DDB700237994 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		27114D401B4603150087655C /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = castle.png; sourceTree = "<group>"; };
@@ -161,6 +195,8 @@
 		27B9C3F41B45F37500B61989 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		27D343DD1B45A9F400172A4D /* PathfindingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingTests.m; sourceTree = "<group>"; };
 		27E255E21B51DB4200237994 /* libJLFGameplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJLFGameplayKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libJLFGameplayKit-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E256441B51DDB800237994 /* JLFGameplayKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JLFGameplayKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
 		27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
@@ -202,6 +238,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27E256371B51DDB700237994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E256411B51DDB800237994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E256451B51DDB800237994 /* libJLFGameplayKit-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -224,6 +275,8 @@
 				2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */,
 				27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */,
 				27E255E21B51DB4200237994 /* libJLFGameplayKit.a */,
+				27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */,
+				27E256441B51DDB800237994 /* JLFGameplayKit-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -389,9 +442,9 @@
 			productReference = 276062161B37C571000E505D /* Demo1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2760622D1B37C571000E505D /* JLFGameplayKitTests */ = {
+		2760622D1B37C571000E505D /* JLFGameplayKit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2760623B1B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKitTests" */;
+			buildConfigurationList = 2760623B1B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKit Tests" */;
 			buildPhases = (
 				2760622A1B37C571000E505D /* Sources */,
 				2760622B1B37C571000E505D /* Frameworks */,
@@ -402,7 +455,7 @@
 			dependencies = (
 				276062301B37C571000E505D /* PBXTargetDependency */,
 			);
-			name = JLFGameplayKitTests;
+			name = "JLFGameplayKit Tests";
 			productName = JLFGameplayKitTests;
 			productReference = 2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -441,6 +494,41 @@
 			productReference = 27E255E21B51DB4200237994 /* libJLFGameplayKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		27E256391B51DDB700237994 /* JLFGameplayKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27E2564B1B51DDB800237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit-iOS" */;
+			buildPhases = (
+				27E256361B51DDB700237994 /* Sources */,
+				27E256371B51DDB700237994 /* Frameworks */,
+				27E256381B51DDB700237994 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JLFGameplayKit-iOS";
+			productName = "JLFGameplayKit-iOS";
+			productReference = 27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		27E256431B51DDB800237994 /* JLFGameplayKit-iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27E2564E1B51DDB800237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit-iOS Tests" */;
+			buildPhases = (
+				27E256401B51DDB800237994 /* Sources */,
+				27E256411B51DDB800237994 /* Frameworks */,
+				27E256421B51DDB800237994 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27E256471B51DDB800237994 /* PBXTargetDependency */,
+			);
+			name = "JLFGameplayKit-iOS Tests";
+			productName = "JLFGameplayKit-iOSTests";
+			productReference = 27E256441B51DDB800237994 /* JLFGameplayKit-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -463,6 +551,12 @@
 					27E255E11B51DB4200237994 = {
 						CreatedOnToolsVersion = 6.4;
 					};
+					27E256391B51DDB700237994 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					27E256431B51DDB800237994 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 				};
 			};
 			buildConfigurationList = 276062111B37C571000E505D /* Build configuration list for PBXProject "JLFGameplayKit" */;
@@ -478,10 +572,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				276062151B37C571000E505D /* Demo1 */,
-				2760622D1B37C571000E505D /* JLFGameplayKitTests */,
-				27B9C3CC1B45F33700B61989 /* PathfindingDemo1 */,
 				27E255E11B51DB4200237994 /* JLFGameplayKit */,
+				2760622D1B37C571000E505D /* JLFGameplayKit Tests */,
+				27E256391B51DDB700237994 /* JLFGameplayKit-iOS */,
+				27E256431B51DDB800237994 /* JLFGameplayKit-iOS Tests */,
+				276062151B37C571000E505D /* Demo1 */,
+				27B9C3CC1B45F33700B61989 /* PathfindingDemo1 */,
 			);
 		};
 /* End PBXProject section */
@@ -519,6 +615,13 @@
 				27B9C3DC1B45F33700B61989 /* Images.xcassets in Resources */,
 				27114D571B473D080087655C /* castle.png in Resources */,
 				27B9C3DF1B45F33700B61989 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E256421B51DDB800237994 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +717,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27E256361B51DDB700237994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E256561B51DDE400237994 /* JLFGKGraphNode.m in Sources */,
+				27E256511B51DDE400237994 /* JLFGKComponent.m in Sources */,
+				27E256551B51DDE400237994 /* JLFGKGraph.m in Sources */,
+				27E256541B51DDE400237994 /* JLFGKEntity.m in Sources */,
+				27E256591B51DDE400237994 /* JLFGKState+Private.m in Sources */,
+				27E256571B51DDE400237994 /* JLFGKSimplePriorityQueue.m in Sources */,
+				27E256521B51DDE400237994 /* JLFGKComponent+Private.m in Sources */,
+				27E256531B51DDE400237994 /* JLFGKComponentSystem.m in Sources */,
+				27E256581B51DDE400237994 /* JLFGKState.m in Sources */,
+				27E2565A1B51DDE400237994 /* JLFGKStateMachine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E256401B51DDB800237994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E2565D1B51DDE700237994 /* PriorityQueueTests.m in Sources */,
+				27E2565C1B51DDE700237994 /* PathfindingTests.m in Sources */,
+				27E2565B1B51DDE700237994 /* ComponentTests.m in Sources */,
+				27E2565E1B51DDE700237994 /* StateMachineTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -621,6 +752,11 @@
 			isa = PBXTargetDependency;
 			target = 276062151B37C571000E505D /* Demo1 */;
 			targetProxy = 2760622F1B37C571000E505D /* PBXContainerItemProxy */;
+		};
+		27E256471B51DDB800237994 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27E256391B51DDB700237994 /* JLFGameplayKit-iOS */;
+			targetProxy = 27E256461B51DDB800237994 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -810,11 +946,13 @@
 		27E255F31B51DB4600237994 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -822,8 +960,80 @@
 		27E255F41B51DB4600237994 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = YES;
 				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		27E2564C1B51DDB800237994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		27E2564D1B51DDB800237994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27E2564F1B51DDB800237994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		27E256501B51DDB800237994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -848,7 +1058,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2760623B1B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKitTests" */ = {
+		2760623B1B37C571000E505D /* Build configuration list for PBXNativeTarget "JLFGameplayKit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2760623C1B37C571000E505D /* Debug */,
@@ -871,6 +1081,22 @@
 			buildConfigurations = (
 				27E255F31B51DB4600237994 /* Debug */,
 				27E255F41B51DB4600237994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27E2564B1B51DDB800237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27E2564C1B51DDB800237994 /* Debug */,
+				27E2564D1B51DDB800237994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27E2564E1B51DDB800237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit-iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27E2564F1B51DDB800237994 /* Debug */,
+				27E256501B51DDB800237994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
