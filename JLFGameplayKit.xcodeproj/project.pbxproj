@@ -67,6 +67,16 @@
 		27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D343DD1B45A9F400172A4D /* PathfindingTests.m */; };
 		27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
 		27D343E11B45AA3000172A4D /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
+		27E255F91B51DB6A00237994 /* JLFGKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062431B37C5D2000E505D /* JLFGKComponent.m */; };
+		27E255FA1B51DB6A00237994 /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
+		27E255FB1B51DB6A00237994 /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
+		27E255FC1B51DB6A00237994 /* JLFGKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062401B37C5AE000E505D /* JLFGKEntity.m */; };
+		27E255FD1B51DB6A00237994 /* JLFGKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C108A1B44B25400BDFEEB /* JLFGKGraph.m */; };
+		27E255FE1B51DB6A00237994 /* JLFGKGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */; };
+		27E255FF1B51DB6A00237994 /* JLFGKSimplePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */; };
+		27E256001B51DB6A00237994 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
+		27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */; };
+		27E256021B51DB6A00237994 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
 		27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */; };
 		27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4E1B3C8C760088B785 /* CGPointMath.m */; };
 		27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */; };
@@ -99,7 +109,7 @@
 		272C94C61B3BC3030037FC7F /* Characters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Characters.atlas; sourceTree = "<group>"; };
 		272C94C81B3BC4920037FC7F /* SpriteComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteComponent.h; sourceTree = "<group>"; };
 		272C94C91B3BC4920037FC7F /* SpriteComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteComponent.m; sourceTree = "<group>"; };
-		276062161B37C571000E505D /* JLFGameplayKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLFGameplayKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		276062161B37C571000E505D /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2760621A1B37C571000E505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2760621B1B37C571000E505D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2760621C1B37C571000E505D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 		27B9C3DE1B45F33700B61989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		27B9C3F41B45F37500B61989 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		27D343DD1B45A9F400172A4D /* PathfindingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingTests.m; sourceTree = "<group>"; };
+		27E255E21B51DB4200237994 /* libJLFGameplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJLFGameplayKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
 		27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
@@ -184,16 +195,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27E255DF1B51DB4200237994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2760620D1B37C571000E505D = {
 			isa = PBXGroup;
 			children = (
-				27DDA57E1B38B32500E1A005 /* Assets */,
-				276062181B37C571000E505D /* Demo1 */,
 				2760623E1B37C59C000E505D /* JLFGameplayKit */,
 				276062311B37C571000E505D /* Tests */,
+				27DDA57E1B38B32500E1A005 /* Assets */,
+				276062181B37C571000E505D /* Demo1 */,
 				27B9C3CE1B45F33700B61989 /* PathfindingDemo1 */,
 				276062171B37C571000E505D /* Products */,
 			);
@@ -202,9 +220,10 @@
 		276062171B37C571000E505D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				276062161B37C571000E505D /* JLFGameplayKit.app */,
+				276062161B37C571000E505D /* Demo1.app */,
 				2760622E1B37C571000E505D /* JLFGameplayKitTests.xctest */,
 				27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */,
+				27E255E21B51DB4200237994 /* libJLFGameplayKit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,6 +361,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		27E255E01B51DB4200237994 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		276062151B37C571000E505D /* Demo1 */ = {
 			isa = PBXNativeTarget;
@@ -357,7 +386,7 @@
 			);
 			name = Demo1;
 			productName = JLFGameplayKit;
-			productReference = 276062161B37C571000E505D /* JLFGameplayKit.app */;
+			productReference = 276062161B37C571000E505D /* Demo1.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2760622D1B37C571000E505D /* JLFGameplayKitTests */ = {
@@ -395,6 +424,23 @@
 			productReference = 27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27E255E11B51DB4200237994 /* JLFGameplayKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27E255F71B51DB4600237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit" */;
+			buildPhases = (
+				27E255DE1B51DB4200237994 /* Sources */,
+				27E255DF1B51DB4200237994 /* Frameworks */,
+				27E255E01B51DB4200237994 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLFGameplayKit;
+			productName = JLFGameplayKit;
+			productReference = 27E255E21B51DB4200237994 /* libJLFGameplayKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -412,6 +458,9 @@
 						TestTargetID = 276062151B37C571000E505D;
 					};
 					27B9C3CC1B45F33700B61989 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					27E255E11B51DB4200237994 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -432,6 +481,7 @@
 				276062151B37C571000E505D /* Demo1 */,
 				2760622D1B37C571000E505D /* JLFGameplayKitTests */,
 				27B9C3CC1B45F33700B61989 /* PathfindingDemo1 */,
+				27E255E11B51DB4200237994 /* JLFGameplayKit */,
 			);
 		};
 /* End PBXProject section */
@@ -544,6 +594,23 @@
 				27B9C3D81B45F33700B61989 /* GameScene.m in Sources */,
 				27B9C3D31B45F33700B61989 /* AppDelegate.m in Sources */,
 				27114D511B4627110087655C /* JLFGKGraph.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E255DE1B51DB4200237994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E255FE1B51DB6A00237994 /* JLFGKGraphNode.m in Sources */,
+				27E255F91B51DB6A00237994 /* JLFGKComponent.m in Sources */,
+				27E255FD1B51DB6A00237994 /* JLFGKGraph.m in Sources */,
+				27E255FC1B51DB6A00237994 /* JLFGKEntity.m in Sources */,
+				27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */,
+				27E255FF1B51DB6A00237994 /* JLFGKSimplePriorityQueue.m in Sources */,
+				27E255FA1B51DB6A00237994 /* JLFGKComponent+Private.m in Sources */,
+				27E255FB1B51DB6A00237994 /* JLFGKComponentSystem.m in Sources */,
+				27E256001B51DB6A00237994 /* JLFGKState.m in Sources */,
+				27E256021B51DB6A00237994 /* JLFGKStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,7 +730,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = JLFGameplayKit;
+				PRODUCT_NAME = Demo1;
 			};
 			name = Debug;
 		};
@@ -674,7 +741,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = JLFGameplayKit;
+				PRODUCT_NAME = Demo1;
 			};
 			name = Release;
 		};
@@ -740,6 +807,26 @@
 			};
 			name = Release;
 		};
+		27E255F31B51DB4600237994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27E255F41B51DB4600237994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -778,6 +865,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		27E255F71B51DB4600237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27E255F31B51DB4600237994 /* Debug */,
+				27E255F41B51DB4600237994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
