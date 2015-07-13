@@ -52,6 +52,16 @@
 		27AA857D1B47564500AF2DDA /* SpriteComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA857C1B47564500AF2DDA /* SpriteComponent.m */; };
 		27AA85801B4779C400AF2DDA /* PathFollowingComponentStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */; };
 		27AA85831B47A44F00AF2DDA /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA85821B47A44F00AF2DDA /* CGPointMath.m */; };
+		27AD86F91B5370970009489D /* JLFGKGridGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 27AD86F51B5370970009489D /* JLFGKGridGraph.h */; };
+		27AD86FA1B5370970009489D /* JLFGKGridGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F61B5370970009489D /* JLFGKGridGraph.m */; };
+		27AD86FB1B5370970009489D /* JLFGKGridGraphNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 27AD86F71B5370970009489D /* JLFGKGridGraphNode.h */; };
+		27AD86FC1B5370970009489D /* JLFGKGridGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */; };
+		27AD86FD1B537D590009489D /* JLFGKGridGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F61B5370970009489D /* JLFGKGridGraph.m */; };
+		27AD86FE1B537D590009489D /* JLFGKGridGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */; };
+		27AD86FF1B537D5A0009489D /* JLFGKGridGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F61B5370970009489D /* JLFGKGridGraph.m */; };
+		27AD87001B537D5A0009489D /* JLFGKGridGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */; };
+		27AD87011B537D5B0009489D /* JLFGKGridGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F61B5370970009489D /* JLFGKGridGraph.m */; };
+		27AD87021B537D5B0009489D /* JLFGKGridGraphNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */; };
 		27B7E4BF1B3E057500705D17 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
 		27B7E4C31B3E064600705D17 /* StateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */; };
 		27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B7E4BE1B3E057500705D17 /* JLFGKState.m */; };
@@ -174,6 +184,10 @@
 		27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFollowingComponentStates.m; sourceTree = "<group>"; };
 		27AA85811B47A44F00AF2DDA /* CGPointMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
 		27AA85821B47A44F00AF2DDA /* CGPointMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointMath.m; sourceTree = "<group>"; };
+		27AD86F51B5370970009489D /* JLFGKGridGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGridGraph.h; sourceTree = "<group>"; };
+		27AD86F61B5370970009489D /* JLFGKGridGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGridGraph.m; sourceTree = "<group>"; };
+		27AD86F71B5370970009489D /* JLFGKGridGraphNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGridGraphNode.h; sourceTree = "<group>"; };
+		27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGridGraphNode.m; sourceTree = "<group>"; };
 		27B7E4BD1B3E057500705D17 /* JLFGKState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKState.h; sourceTree = "<group>"; };
 		27B7E4BE1B3E057500705D17 /* JLFGKState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKState.m; sourceTree = "<group>"; };
 		27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateMachineTests.m; sourceTree = "<group>"; };
@@ -196,7 +210,7 @@
 		27D343DD1B45A9F400172A4D /* PathfindingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingTests.m; sourceTree = "<group>"; };
 		27E255E21B51DB4200237994 /* libJLFGameplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJLFGameplayKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libJLFGameplayKit-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		27E256441B51DDB800237994 /* JLFGameplayKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JLFGameplayKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E256441B51DDB800237994 /* JLFGameplayKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JLFGameplayKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
 		27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
@@ -276,7 +290,7 @@
 				27B9C3CD1B45F33700B61989 /* PathfindingDemo1.app */,
 				27E255E21B51DB4200237994 /* libJLFGameplayKit.a */,
 				27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */,
-				27E256441B51DDB800237994 /* JLFGameplayKit-iOSTests.xctest */,
+				27E256441B51DDB800237994 /* JLFGameplayKit-iOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,6 +366,10 @@
 				271C108A1B44B25400BDFEEB /* JLFGKGraph.m */,
 				271C10861B44B0C900BDFEEB /* JLFGKGraphNode.h */,
 				271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */,
+				27AD86F51B5370970009489D /* JLFGKGridGraph.h */,
+				27AD86F61B5370970009489D /* JLFGKGridGraph.m */,
+				27AD86F71B5370970009489D /* JLFGKGridGraphNode.h */,
+				27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */,
 				27B9C3C41B45C0B600B61989 /* JLFGKSimplePriorityQueue.h */,
 				27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */,
 				27B7E4BD1B3E057500705D17 /* JLFGKState.h */,
@@ -419,6 +437,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AD86FB1B5370970009489D /* JLFGKGridGraphNode.h in Headers */,
+				27AD86F91B5370970009489D /* JLFGKGridGraph.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +546,7 @@
 			);
 			name = "JLFGameplayKit-iOS Tests";
 			productName = "JLFGameplayKit-iOSTests";
-			productReference = 27E256441B51DDB800237994 /* JLFGameplayKit-iOSTests.xctest */;
+			productReference = 27E256441B51DDB800237994 /* JLFGameplayKit-iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -667,7 +687,9 @@
 				276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */,
 				27114D4B1B4627100087655C /* JLFGKSimplePriorityQueue.m in Sources */,
 				27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */,
+				27AD86FD1B537D590009489D /* JLFGKGridGraph.m in Sources */,
 				27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */,
+				27AD86FE1B537D590009489D /* JLFGKGridGraphNode.m in Sources */,
 				27114D4C1B4627100087655C /* JLFGKState+Private.m in Sources */,
 				27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */,
 				2760624C1B37CE96000E505D /* ComponentTests.m in Sources */,
@@ -705,11 +727,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E255FE1B51DB6A00237994 /* JLFGKGraphNode.m in Sources */,
+				27AD86FA1B5370970009489D /* JLFGKGridGraph.m in Sources */,
 				27E255F91B51DB6A00237994 /* JLFGKComponent.m in Sources */,
 				27E255FD1B51DB6A00237994 /* JLFGKGraph.m in Sources */,
 				27E255FC1B51DB6A00237994 /* JLFGKEntity.m in Sources */,
 				27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */,
 				27E255FF1B51DB6A00237994 /* JLFGKSimplePriorityQueue.m in Sources */,
+				27AD86FC1B5370970009489D /* JLFGKGridGraphNode.m in Sources */,
 				27E255FA1B51DB6A00237994 /* JLFGKComponent+Private.m in Sources */,
 				27E255FB1B51DB6A00237994 /* JLFGKComponentSystem.m in Sources */,
 				27E256001B51DB6A00237994 /* JLFGKState.m in Sources */,
@@ -722,11 +746,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E256561B51DDE400237994 /* JLFGKGraphNode.m in Sources */,
+				27AD86FF1B537D5A0009489D /* JLFGKGridGraph.m in Sources */,
 				27E256511B51DDE400237994 /* JLFGKComponent.m in Sources */,
 				27E256551B51DDE400237994 /* JLFGKGraph.m in Sources */,
 				27E256541B51DDE400237994 /* JLFGKEntity.m in Sources */,
 				27E256591B51DDE400237994 /* JLFGKState+Private.m in Sources */,
 				27E256571B51DDE400237994 /* JLFGKSimplePriorityQueue.m in Sources */,
+				27AD87001B537D5A0009489D /* JLFGKGridGraphNode.m in Sources */,
 				27E256521B51DDE400237994 /* JLFGKComponent+Private.m in Sources */,
 				27E256531B51DDE400237994 /* JLFGKComponentSystem.m in Sources */,
 				27E256581B51DDE400237994 /* JLFGKState.m in Sources */,
@@ -739,9 +765,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E2565D1B51DDE700237994 /* PriorityQueueTests.m in Sources */,
+				27AD87021B537D5B0009489D /* JLFGKGridGraphNode.m in Sources */,
 				27E2565C1B51DDE700237994 /* PathfindingTests.m in Sources */,
 				27E2565B1B51DDE700237994 /* ComponentTests.m in Sources */,
 				27E2565E1B51DDE700237994 /* StateMachineTests.m in Sources */,
+				27AD87011B537D5B0009489D /* JLFGKGridGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,6 +1111,7 @@
 				27E255F41B51DB4600237994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27E2564B1B51DDB800237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit-iOS" */ = {
 			isa = XCConfigurationList;
@@ -1091,6 +1120,7 @@
 				27E2564D1B51DDB800237994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27E2564E1B51DDB800237994 /* Build configuration list for PBXNativeTarget "JLFGameplayKit-iOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -1099,6 +1129,7 @@
 				27E256501B51DDB800237994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "JLFGKGraphNode.h"
 #import "JLFGKGraph.h"
+#import "JLFGKGridGraph.h"
 
 @interface PathfindingTests : XCTestCase
 @end
@@ -250,4 +251,479 @@
     XCTAssertEqual([n3.connectedNodes containsObject:n1], YES);
 }
 
+- (void)testGridGraphProperties
+{
+    JLFGKGridGraph *graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){-3, -7}
+                                                              width:3
+                                                             height:3
+                                                   diagonalsAllowed:YES];
+
+    XCTAssertEqual(graph.gridOrigin.x, -3);
+    XCTAssertEqual(graph.gridOrigin.y, -7);
+    XCTAssertEqual(graph.gridWidth, 3);
+    XCTAssertEqual(graph.gridHeight, 3);
+    XCTAssertEqual(graph.diagonalsAllowed, YES);
+}
+
+- (void)testGridGraphNodeLookup
+{
+    JLFGKGridGraph *originGraph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                                                    width:3
+                                                                   height:3
+                                                         diagonalsAllowed:NO];
+
+    for (int x = 0; x < 3; x++) {
+        for (int y = 0; y < 3; y++) {
+            JLFGKGridGraphNode *node = [originGraph nodeAtGridPosition:(vector_int2){x, y}];
+            XCTAssertEqual(node.position.x, x);
+            XCTAssertEqual(node.position.y, y);
+        }
+    }
+
+    JLFGKGridGraphNode *invalidNode = [originGraph nodeAtGridPosition:(vector_int2){-1, 0}];
+    XCTAssertNil(invalidNode);
+    invalidNode = [originGraph nodeAtGridPosition:(vector_int2){3, 0}];
+    XCTAssertNil(invalidNode);
+    invalidNode = [originGraph nodeAtGridPosition:(vector_int2){1, -1}];
+    XCTAssertNil(invalidNode);
+    invalidNode = [originGraph nodeAtGridPosition:(vector_int2){1, 3}];
+    XCTAssertNil(invalidNode);
+
+    JLFGKGridGraph *notOriginGraph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){-7, 10}
+                                                                       width:3
+                                                                      height:3
+                                                            diagonalsAllowed:NO];
+
+    for (int x = -7; x < -4; x++) {
+        for (int y = 10; y < 13; y++) {
+            JLFGKGridGraphNode *node = [notOriginGraph nodeAtGridPosition:(vector_int2){x, y}];
+            XCTAssertEqual(node.position.x, x);
+            XCTAssertEqual(node.position.y, y);
+        }
+    }
+
+    invalidNode = [notOriginGraph nodeAtGridPosition:(vector_int2){-8, 11}];
+    XCTAssertNil(invalidNode);
+    invalidNode = [notOriginGraph nodeAtGridPosition:(vector_int2){-4, 11}];
+    XCTAssertNil(invalidNode);
+    invalidNode = [notOriginGraph nodeAtGridPosition:(vector_int2){-5, 9}];
+    XCTAssertNil(invalidNode);
+    invalidNode = [notOriginGraph nodeAtGridPosition:(vector_int2){-5, 13}];
+    XCTAssertNil(invalidNode);
+}
+
+- (void)testGridGraphCreatedFullyConnectedNoDiagonals
+{
+    JLFGKGridGraph *graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                                              width:3
+                                                             height:3
+                                                   diagonalsAllowed:NO];
+
+    XCTAssertNotNil(graph);
+    XCTAssertEqual(graph.nodes.count, 9);
+
+    JLFGKGridGraphNode *n00 = [graph nodeAtGridPosition:(vector_int2){0, 0}];
+    JLFGKGridGraphNode *n01 = [graph nodeAtGridPosition:(vector_int2){0, 1}];
+    JLFGKGridGraphNode *n02 = [graph nodeAtGridPosition:(vector_int2){0, 2}];
+    JLFGKGridGraphNode *n10 = [graph nodeAtGridPosition:(vector_int2){1, 0}];
+    JLFGKGridGraphNode *n11 = [graph nodeAtGridPosition:(vector_int2){1, 1}];
+    JLFGKGridGraphNode *n12 = [graph nodeAtGridPosition:(vector_int2){1, 2}];
+    JLFGKGridGraphNode *n20 = [graph nodeAtGridPosition:(vector_int2){2, 0}];
+    JLFGKGridGraphNode *n21 = [graph nodeAtGridPosition:(vector_int2){2, 1}];
+    JLFGKGridGraphNode *n22 = [graph nodeAtGridPosition:(vector_int2){2, 2}];
+
+    XCTAssertEqual([n00.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n00.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n00.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n10.connectedNodes containsObject:n00], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n20], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n20.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n20.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n20.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n01.connectedNodes containsObject:n00], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n02], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n11.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n11.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n11.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([n11.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n11.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n21.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n20], YES);
+    XCTAssertEqual([n21.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n21.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n22], YES);
+
+    XCTAssertEqual([n02.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n02.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n02.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n12.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n12.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n02], YES);
+    XCTAssertEqual([n12.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n22], YES);
+
+    XCTAssertEqual([n22.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n22.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n22.connectedNodes containsObject:n22], NO);
+}
+
+- (void)testGridGraphCreatedFullyConnectedWithDiagonals
+{
+    JLFGKGridGraph *graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                                              width:3
+                                                             height:3
+                                                   diagonalsAllowed:YES];
+
+    XCTAssertNotNil(graph);
+    XCTAssertEqual(graph.nodes.count, 9);
+
+    JLFGKGridGraphNode *n00 = [graph nodeAtGridPosition:(vector_int2){0, 0}];
+    JLFGKGridGraphNode *n01 = [graph nodeAtGridPosition:(vector_int2){0, 1}];
+    JLFGKGridGraphNode *n02 = [graph nodeAtGridPosition:(vector_int2){0, 2}];
+    JLFGKGridGraphNode *n10 = [graph nodeAtGridPosition:(vector_int2){1, 0}];
+    JLFGKGridGraphNode *n11 = [graph nodeAtGridPosition:(vector_int2){1, 1}];
+    JLFGKGridGraphNode *n12 = [graph nodeAtGridPosition:(vector_int2){1, 2}];
+    JLFGKGridGraphNode *n20 = [graph nodeAtGridPosition:(vector_int2){2, 0}];
+    JLFGKGridGraphNode *n21 = [graph nodeAtGridPosition:(vector_int2){2, 1}];
+    JLFGKGridGraphNode *n22 = [graph nodeAtGridPosition:(vector_int2){2, 2}];
+
+    XCTAssertEqual([n00.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n00.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n00.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n00.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n00.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n10.connectedNodes containsObject:n00], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n20], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n10.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n10.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n20.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n20.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n20.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n20.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n20.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n01.connectedNodes containsObject:n00], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n01.connectedNodes containsObject:n02], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n01.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n11.connectedNodes containsObject:n00], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n20], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([n11.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n02], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n11.connectedNodes containsObject:n22], YES);
+
+    XCTAssertEqual([n21.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([n21.connectedNodes containsObject:n20], YES);
+    XCTAssertEqual([n21.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n21.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n21.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n21.connectedNodes containsObject:n22], YES);
+
+    XCTAssertEqual([n02.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n02.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n02.connectedNodes containsObject:n21], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n02.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n02.connectedNodes containsObject:n22], NO);
+
+    XCTAssertEqual([n12.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([n12.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n12.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n12.connectedNodes containsObject:n02], YES);
+    XCTAssertEqual([n12.connectedNodes containsObject:n12], NO);
+    XCTAssertEqual([n12.connectedNodes containsObject:n22], YES);
+
+    XCTAssertEqual([n22.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n10], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n01], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n11], YES);
+    XCTAssertEqual([n22.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([n22.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([n22.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([n22.connectedNodes containsObject:n22], NO);
+}
+
+- (void)testGridGraphConnectAdjacentNodes
+{
+    // This is kind of a silly-ish test, because -connectAdjacentNodes is used heavily within
+    // the grid graph initializer, but I'm including it for clarity's sake.
+    JLFGKGridGraph *graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                                              width:3
+                                                             height:3
+                                                   diagonalsAllowed:NO];
+
+    JLFGKGridGraphNode *extraNode = [JLFGKGridGraphNode nodeWithGridPosition:(vector_int2){1, 1}];
+    [graph connectNodeToAdjacentNodes:extraNode];
+
+    JLFGKGridGraphNode *n00 = [graph nodeAtGridPosition:(vector_int2){0, 0}];
+    JLFGKGridGraphNode *n01 = [graph nodeAtGridPosition:(vector_int2){0, 1}];
+    JLFGKGridGraphNode *n02 = [graph nodeAtGridPosition:(vector_int2){0, 2}];
+    JLFGKGridGraphNode *n10 = [graph nodeAtGridPosition:(vector_int2){1, 0}];
+    JLFGKGridGraphNode *n11 = [graph nodeAtGridPosition:(vector_int2){1, 1}];
+    JLFGKGridGraphNode *n12 = [graph nodeAtGridPosition:(vector_int2){1, 2}];
+    JLFGKGridGraphNode *n20 = [graph nodeAtGridPosition:(vector_int2){2, 0}];
+    JLFGKGridGraphNode *n21 = [graph nodeAtGridPosition:(vector_int2){2, 1}];
+    JLFGKGridGraphNode *n22 = [graph nodeAtGridPosition:(vector_int2){2, 2}];
+
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n00], NO);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n02], NO);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n20], NO);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n22], NO);
+
+    graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                              width:3
+                                             height:3
+                                   diagonalsAllowed:YES];
+
+    extraNode = [JLFGKGridGraphNode nodeWithGridPosition:(vector_int2){1, 1}];
+    [graph connectNodeToAdjacentNodes:extraNode];
+
+    n00 = [graph nodeAtGridPosition:(vector_int2){0, 0}];
+    n01 = [graph nodeAtGridPosition:(vector_int2){0, 1}];
+    n02 = [graph nodeAtGridPosition:(vector_int2){0, 2}];
+    n10 = [graph nodeAtGridPosition:(vector_int2){1, 0}];
+    n11 = [graph nodeAtGridPosition:(vector_int2){1, 1}];
+    n12 = [graph nodeAtGridPosition:(vector_int2){1, 2}];
+    n20 = [graph nodeAtGridPosition:(vector_int2){2, 0}];
+    n21 = [graph nodeAtGridPosition:(vector_int2){2, 1}];
+    n22 = [graph nodeAtGridPosition:(vector_int2){2, 2}];
+
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n00], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n01], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n02], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n10], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n11], NO);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n12], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n20], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n21], YES);
+    XCTAssertEqual([extraNode.connectedNodes containsObject:n22], YES);
+}
+
+- (void)testGridGraphFindPathNoDiagonals
+{
+    // The map being tested. 0s are clear space, 1s are walls, 5 is the start point, 9 the end,
+    // 2s the expected path.
+    const int mapWidth = 10;
+    const int mapHeight = 10;
+    const int map[] = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 2, 2, 2, 0, 0,
+        0, 0, 0, 0, 2, 2, 1, 2, 0, 0,
+        0, 0, 0, 0, 2, 1, 0, 2, 0, 0,
+        0, 0, 0, 2, 2, 1, 0, 2, 0, 0,
+        0, 0, 0, 2, 1, 0, 0, 2, 0, 0,
+        0, 0, 0, 2, 2, 1, 0, 2, 0, 0,
+        0, 0, 0, 0, 2, 0, 1, 9, 0, 0,
+        0, 0, 0, 0, 5, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0
+    };
+
+    JLFGKGridGraph *graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                                              width:mapWidth
+                                                             height:mapHeight
+                                                   diagonalsAllowed:NO];
+
+    JLFGKGridGraphNode *start = [graph nodeAtGridPosition:(vector_int2){4, 8}];
+    JLFGKGridGraphNode *goal = [graph nodeAtGridPosition:(vector_int2){7, 7}];
+
+    NSMutableArray *walls = [NSMutableArray array];
+    for (int y = 0; y < mapHeight; y++) {
+        for (int x = 0; x < mapWidth; x++) {
+            int idx = x + (y * mapWidth);
+
+            if (map[idx] == 1) {
+                [walls addObject:[graph nodeAtGridPosition:(vector_int2){x, y}]];
+            }
+        }
+    }
+
+    [graph removeNodes:walls];
+    NSArray *path = [graph findPathFromNode:start toNode:goal];
+    XCTAssertNotNil(path);
+    XCTAssertEqualObjects(start, path[0]);
+
+    JLFGKGridGraphNode *step = [graph nodeAtGridPosition:(vector_int2){4, 7}];
+    XCTAssertEqualObjects(step, path[1]);
+    step = [graph nodeAtGridPosition:(vector_int2){4, 6}];
+    XCTAssertEqualObjects(step, path[2]);
+    step = [graph nodeAtGridPosition:(vector_int2){3, 6}];
+    XCTAssertEqualObjects(step, path[3]);
+    step = [graph nodeAtGridPosition:(vector_int2){3, 5}];
+    XCTAssertEqualObjects(step, path[4]);
+    step = [graph nodeAtGridPosition:(vector_int2){3, 4}];
+    XCTAssertEqualObjects(step, path[5]);
+    step = [graph nodeAtGridPosition:(vector_int2){4, 4}];
+    XCTAssertEqualObjects(step, path[6]);
+    step = [graph nodeAtGridPosition:(vector_int2){4, 3}];
+    XCTAssertEqualObjects(step, path[7]);
+    step = [graph nodeAtGridPosition:(vector_int2){4, 2}];
+    XCTAssertEqualObjects(step, path[8]);
+    step = [graph nodeAtGridPosition:(vector_int2){5, 2}];
+    XCTAssertEqualObjects(step, path[9]);
+    step = [graph nodeAtGridPosition:(vector_int2){5, 1}];
+    XCTAssertEqualObjects(step, path[10]);
+    step = [graph nodeAtGridPosition:(vector_int2){6, 1}];
+    XCTAssertEqualObjects(step, path[11]);
+    step = [graph nodeAtGridPosition:(vector_int2){7, 1}];
+    XCTAssertEqualObjects(step, path[12]);
+    step = [graph nodeAtGridPosition:(vector_int2){7, 2}];
+    XCTAssertEqualObjects(step, path[13]);
+    step = [graph nodeAtGridPosition:(vector_int2){7, 3}];
+    XCTAssertEqualObjects(step, path[14]);
+    step = [graph nodeAtGridPosition:(vector_int2){7, 4}];
+    XCTAssertEqualObjects(step, path[15]);
+    step = [graph nodeAtGridPosition:(vector_int2){7, 5}];
+    XCTAssertEqualObjects(step, path[16]);
+    step = [graph nodeAtGridPosition:(vector_int2){7, 6}];
+    XCTAssertEqualObjects(step, path[17]);
+
+    XCTAssertEqualObjects(goal, [path lastObject]);
+}
+
+- (void)testGridGraphFindPathWithDiagonals
+{
+    // The map being tested. 0s are clear space, 1s are walls, 5 is the start point, 9 the end,
+    // 2s the expected path.
+    const int mapWidth = 10;
+    const int mapHeight = 10;
+    const int map[] = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1, 2, 0, 0, 0,
+        0, 0, 0, 0, 0, 2, 1, 9, 0, 0,
+        0, 0, 0, 0, 5, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0
+    };
+
+    JLFGKGridGraph *graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
+                                                              width:mapWidth
+                                                             height:mapHeight
+                                                   diagonalsAllowed:YES];
+
+    JLFGKGridGraphNode *start = [graph nodeAtGridPosition:(vector_int2){4, 8}];
+    JLFGKGridGraphNode *goal = [graph nodeAtGridPosition:(vector_int2){7, 7}];
+
+    NSMutableArray *walls = [NSMutableArray array];
+    for (int y = 0; y < mapHeight; y++) {
+        for (int x = 0; x < mapWidth; x++) {
+            int idx = x + (y * mapWidth);
+
+            if (map[idx] == 1) {
+                [walls addObject:[graph nodeAtGridPosition:(vector_int2){x, y}]];
+            }
+        }
+    }
+
+    [graph removeNodes:walls];
+    NSArray *path = [graph findPathFromNode:start toNode:goal];
+    XCTAssertNotNil(path);
+    XCTAssertEqualObjects(start, path[0]);
+
+    JLFGKGridGraphNode *step = [graph nodeAtGridPosition:(vector_int2){5, 7}];
+    XCTAssertEqualObjects(step, path[1]);
+    step = [graph nodeAtGridPosition:(vector_int2){6, 6}];
+    XCTAssertEqualObjects(step, path[2]);
+
+    XCTAssertEqualObjects(goal, [path lastObject]);
+}
 @end
