@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 #import "JLFGKGraphNode.h"
+#import "JLFGKGraph.h"
 
 @interface PathfindingTests : XCTestCase
 @end
@@ -226,6 +227,27 @@
     JLFGKGraphNode *n1 = [[JLFGKGraphNode alloc] init];
     [n1 addConnectionsToNodes:@[n1] bidirectional:YES];
     XCTAssertEqual(n1.connectedNodes.count, 0);
+}
+
+- (void)testRemovingNodesFromGraphRemovesConnections
+{
+    JLFGKGraphNode *n1, *n2, *n3;
+
+    n1 = [[JLFGKGraphNode alloc] init];
+    n2 = [[JLFGKGraphNode alloc] init];
+    n3 = [[JLFGKGraphNode alloc] init];
+
+    [n1 addConnectionsToNodes:@[n2, n3] bidirectional:YES];
+    JLFGKGraph *graph = [JLFGKGraph graphWithNodes:@[n1, n2]];
+
+    XCTAssertEqual([n1.connectedNodes containsObject:n2], YES);
+    XCTAssertEqual([n1.connectedNodes containsObject:n3], YES);
+    [graph removeNodes:@[n2]];
+
+    XCTAssertEqual([n1.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n1], NO);
+    XCTAssertEqual([n1.connectedNodes containsObject:n3], YES);
+    XCTAssertEqual([n3.connectedNodes containsObject:n1], YES);
 }
 
 @end

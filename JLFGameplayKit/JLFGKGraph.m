@@ -63,6 +63,12 @@
 - (void)removeNodes:(NSArray *)nodes
 {
     NSAssert(nodes != nil, @"JLFGKGraph -removeNodes: Cannot be called with a nil nodes array.");
+
+    // Take out any connections from nodes still within the graph to the one being removed.
+    for (JLFGKGraphNode *node in nodes) {
+        [node removeConnectionsToNodes:self.realNodes bidirectional:YES];
+    }
+
     [self.realNodes removeObjectsInArray:nodes];
 }
 
