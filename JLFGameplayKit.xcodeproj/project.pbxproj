@@ -35,6 +35,7 @@
 		27A9F8E51B556F1400DD1FBE /* BouncyComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B995FE1B5562950096234A /* BouncyComponent.m */; };
 		27A9F8E61B556F1400DD1FBE /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B996001B5562950096234A /* CGPointMath.m */; };
 		27A9F8E71B556F1400DD1FBE /* SpriteComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B996041B5562B30096234A /* SpriteComponent.m */; };
+		27A9F8EA1B55799D00DD1FBE /* PathMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A9F8E91B55799D00DD1FBE /* PathMoveComponent.m */; };
 		27AA85771B47550D00AF2DDA /* PathFollowingComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA85761B47550D00AF2DDA /* PathFollowingComponent.m */; };
 		27AA85801B4779C400AF2DDA /* PathFollowingComponentStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */; };
 		27AD86F91B5370970009489D /* JLFGKGridGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 27AD86F51B5370970009489D /* JLFGKGridGraph.h */; };
@@ -177,6 +178,8 @@
 		276062481B37C63F000E505D /* JLFGKComponent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKComponent+Private.h"; sourceTree = "<group>"; };
 		276062491B37C63F000E505D /* JLFGKComponent+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLFGKComponent+Private.m"; sourceTree = "<group>"; };
 		2760624B1B37CE96000E505D /* ComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentTests.m; sourceTree = "<group>"; };
+		27A9F8E81B55799D00DD1FBE /* PathMoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathMoveComponent.h; sourceTree = "<group>"; };
+		27A9F8E91B55799D00DD1FBE /* PathMoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathMoveComponent.m; sourceTree = "<group>"; };
 		27AA85751B47550D00AF2DDA /* PathFollowingComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFollowingComponent.h; sourceTree = "<group>"; };
 		27AA85761B47550D00AF2DDA /* PathFollowingComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFollowingComponent.m; sourceTree = "<group>"; };
 		27AA857E1B4779C400AF2DDA /* PathFollowingComponentStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFollowingComponentStates.h; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 				27F00F3F1B5449E700DF3EB7 /* GameScene.m */,
 				27F00F431B5449E700DF3EB7 /* GameViewController.h */,
 				27F00F441B5449E700DF3EB7 /* GameViewController.m */,
+				27A9F8E81B55799D00DD1FBE /* PathMoveComponent.h */,
+				27A9F8E91B55799D00DD1FBE /* PathMoveComponent.m */,
 				27F00F491B5449E700DF3EB7 /* Images.xcassets */,
 				27B995D91B54515D0096234A /* Main.storyboard */,
 				27F00F4B1B5449E700DF3EB7 /* LaunchScreen.xib */,
@@ -862,6 +867,7 @@
 				27F00F451B5449E700DF3EB7 /* GameViewController.m in Sources */,
 				27F00F3D1B5449E700DF3EB7 /* AppDelegate.m in Sources */,
 				27F00F401B5449E700DF3EB7 /* GameScene.m in Sources */,
+				27A9F8EA1B55799D00DD1FBE /* PathMoveComponent.m in Sources */,
 				27B996051B5562B30096234A /* SpriteComponent.m in Sources */,
 				27F00F3A1B5449E700DF3EB7 /* main.m in Sources */,
 				27B996021B5562950096234A /* CGPointMath.m in Sources */,

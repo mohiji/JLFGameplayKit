@@ -85,6 +85,12 @@ static void addToArrayIfNotNil(NSMutableArray *array, id obj)
     if (position.x >= self.gridOrigin.x + self.gridWidth) return nil;
     if (position.y >= self.gridOrigin.y + self.gridHeight) return nil;
 
+    // What should this do if a node has been removed from the graph via JLFGKGraph -removeNodes:?
+    // Nodes that have been removed in that way won't be used for pathfinding any longer, but a user might
+    // want to re-add a grid location; for example, if a door was opened.
+    // The documentation doesn't say one way or the other, so I'm leaving it more open ended and not
+    // checking to see whether a grid node is still in self.connectedNodes.
+
     int idx = (position.y - self.gridOrigin.y) * (int)self.gridWidth + (position.x - self.gridOrigin.x);
     return self.gridNodes[idx];
 }

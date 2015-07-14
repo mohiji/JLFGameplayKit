@@ -11,6 +11,9 @@
 #import "JLFGKGridGraph.h"
 #import "JLFGKGridGraphNode.h"
 #import "JLFGKEntity.h"
+#import "SpriteComponent.h"
+#import "BouncyComponent.h"
+#import "PathMoveComponent.h"
 
 // The tiles are square and 32 points on a side.
 static const CGFloat kTileSize = 32.0f;
@@ -20,6 +23,7 @@ static const CGFloat kTileSize = 32.0f;
 @property (strong, nonatomic) SKSpriteNode *sceneRoot;
 
 @property (strong, nonatomic) NSMutableArray *tiles;
+@property (strong, nonatomic) NSMapTable *tilesInPath;
 @property (assign, nonatomic) NSUInteger tilesWide;
 @property (assign, nonatomic) NSUInteger tilesHigh;
 
@@ -31,6 +35,11 @@ static const CGFloat kTileSize = 32.0f;
 @property (assign, nonatomic) CGPoint sceneOffsetAtPanStart;
 
 @property (strong, nonatomic) JLFGKEntity *playerEntity;
+@property (strong, nonatomic) SpriteComponent *playerSprite;
+@property (strong, nonatomic) PathMoveComponent *playerMoveComponent;
+
+@property (assign, nonatomic) BOOL firstUpdate;
+@property (assign, nonatomic) CFTimeInterval lastUpdateTime;
 
 - (void)handlePan:(id)sender;
 - (void)handleTap:(id)sender;
@@ -102,12 +111,12 @@ static const CGFloat kTileSize = 32.0f;
     }
 
     self.graph = [JLFGKGridGraph graphFromGridStartingAt:(vector_int2){0, 0}
-                                                   width:self.tilesWide
-                                                  height:self.tilesHigh
+                                                   width:(int)self.tilesWide
+                                                  height:(int)self.tilesHigh
                                         diagonalsAllowed:NO];
     NSMutableArray *walls = [NSMutableArray array];
-    for (NSUInteger y = 0; y < self.tilesHigh; y++) {
-        for (NSUInteger x = 0; x < self.tilesWide; x++) {
+    for (int y = 0; y < self.tilesHigh; y++) {
+        for (int x = 0; x < self.tilesWide; x++) {
             if (treeAutomata.cells[x + y * self.tilesWide] == YES) {
                 [walls addObject:[self.graph nodeAtGridPosition:(vector_int2){x, y}]];
             }
@@ -119,7 +128,42 @@ static const CGFloat kTileSize = 32.0f;
 
 - (void)createPlayerEntity
 {
+    self.playerMoveComponent = [[PathMoveComponent alloc] init];
+    self.playerMoveComponent.distanceBetweenWaypoints = kTileSize;
+
+    GameScene * __weak weakSelf = self;
+    self.playerMoveComponent.waypointCallback = ^void (JLFGKGridGraphNode *waypoint) {
+        SKSpriteNode *tile = [weakSelf.tilesInPath objectForKey:waypoint];
+        [tile removeAllActions];
+        tile.colorBlendFactor = 0.0f;
+    };
+
+    self.playerSprite = [[SpriteComponent alloc] init];
+    self.playerSprite.sprite = [[SKSpriteNode alloc] initWithImageNamed:@"ranger-left"];
+    self.playerSprite.sprite.anchorPoint = CGPointZero;
+
+    BouncyComponent *bouncy = [[BouncyComponent alloc] init];
+    bouncy.baseAnchorPoint = CGPointZero;
+
     self.playerEntity = [JLFGKEntity entity];
+    [self.playerEntity addComponent:self.playerSprite];
+    [self.playerEntity addComponent:bouncy];
+    [self.playerEntity addComponent:self.playerMoveComponent];
+
+    [self.sceneRoot addChild:self.playerSprite.sprite];
+
+    // Find an open tile to stick him on.
+    BOOL tileOpen = NO;
+    int x = 0, y = 0;
+    while (!tileOpen)
+    {
+        x = arc4random_uniform((int)self.tilesWide / 3);
+        y = arc4random_uniform((int)self.tilesHigh / 3);
+
+        tileOpen = [self.graph.nodes containsObject:[self.graph nodeAtGridPosition:(vector_int2){x, y}]];
+    }
+
+    self.playerSprite.sprite.position = CGPointMake(x * kTileSize, y * kTileSize);
 }
 
 -(void)didMoveToView:(SKView *)view
@@ -134,14 +178,18 @@ static const CGFloat kTileSize = 32.0f;
     self.tilesWide = 30;
     self.tilesHigh = 30;
     self.tiles = [NSMutableArray arrayWithCapacity:self.tilesWide * self.tilesHigh];
+    self.tilesInPath = [NSMapTable mapTableWithKeyOptions:NSMapTableObjectPointerPersonality
+                                             valueOptions:NSMapTableWeakMemory];
 
     [self generateMap];
+    [self createPlayerEntity];
 
     self.panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
 
     [view addGestureRecognizer:self.panRecognizer];
     [view addGestureRecognizer:self.tapRecognizer];
+    self.firstUpdate = YES;
 }
 
 - (void)willMoveFromView:(SKView *)view
@@ -150,8 +198,23 @@ static const CGFloat kTileSize = 32.0f;
     [view removeGestureRecognizer:self.tapRecognizer];
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+-(void)update:(CFTimeInterval)currentTime
+{
+    if (self.firstUpdate)
+    {
+        self.lastUpdateTime = currentTime;
+        self.firstUpdate = NO;
+        return;
+    }
+
+    CFTimeInterval deltaTime = currentTime - self.lastUpdateTime;
+    // Clamp those delta values if they get too big: otherwise the simulator can get
+    // some weird behavior if it can't keep up.
+    if (deltaTime > 1.0f / 15.0f) {
+        deltaTime = 1.0f / 15.0f;
+    }
+    self.lastUpdateTime = currentTime;
+    [self.playerEntity updateWithDeltaTime:deltaTime];
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)sender
@@ -187,10 +250,46 @@ static const CGFloat kTileSize = 32.0f;
     location.x -= self.sceneRoot.position.x;
     location.y -= self.sceneRoot.position.y;
 
-    NSLog(@"Tapped at %@", NSStringFromCGPoint(location));
-    int tileX = (int)floor(location.x / kTileSize);
-    int tileY = (int)floor(location.y / kTileSize);
-    NSLog(@"Tile location should be %d, %d", tileX, tileY);
+    int goalX = (int)floor(location.x / kTileSize);
+    int goalY = (int)floor(location.y / kTileSize);
+
+    int startX = (int)floor(self.playerSprite.sprite.position.x / kTileSize);
+    int startY = (int)floor(self.playerSprite.sprite.position.y / kTileSize);
+
+    NSArray *path = [self.graph findPathFromNode:[self.graph nodeAtGridPosition:(vector_int2){startX, startY}]
+                                          toNode:[self.graph nodeAtGridPosition:(vector_int2){goalX, goalY}]];
+    if (path == nil) {
+        NSLog(@"Failed to find a path from {%d, %d} to {%d, %d}!", startX, startY, goalX, goalY);
+    } else {
+        // Clear any tiles that are already marked
+        for (SKSpriteNode *tile in [self.tilesInPath objectEnumerator]) {
+            [tile removeAllActions];
+            tile.color = [UIColor whiteColor];
+            tile.colorBlendFactor = 0.0f;
+        }
+        [self.tilesInPath removeAllObjects];
+
+        // Mark the new path
+        for (JLFGKGridGraphNode *node in path) {
+            float centerX = node.position.x * kTileSize + (kTileSize / 2.0f);
+            float centerY = node.position.y * kTileSize + (kTileSize / 2.0f);
+
+            SKAction *colorRampUp = [SKAction colorizeWithColorBlendFactor:0.6f duration:0.4f];
+            SKAction *colorRampDown = [colorRampUp reversedAction];
+            SKAction *colorRamp = [SKAction repeatActionForever:[SKAction sequence:@[colorRampUp, colorRampDown]]];
+
+            NSArray *sprites = [self.sceneRoot nodesAtPoint:CGPointMake(centerX, centerY)];
+            for (SKSpriteNode *sprite in sprites) {
+                if ([self.tiles containsObject:sprite]) {
+                    sprite.color = [UIColor redColor];
+                    [sprite runAction:colorRamp];
+                    [self.tilesInPath setObject:sprite forKey:node];
+                }
+            }
+        }
+
+        [self.playerMoveComponent followPath:path];
+    }
 }
 
 @end
