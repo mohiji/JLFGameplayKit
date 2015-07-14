@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Jonathan Fischer. All rights reserved.
 //
 
+#import <math.h>
 #import "CGPointMath.h"
 
 CGPoint CGPointAdd(CGPoint a, CGPoint b)

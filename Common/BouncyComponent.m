@@ -10,8 +10,8 @@
 #import "SpriteComponent.h"
 #import "JLFGKEntity.h"
 
-const CGFloat kDefaultBounceSpeed = 0.18f;
-const CGFloat kDefaultBaseAnchorHeight = 0.5f;
+const float kDefaultBounceSpeed = 0.18f;
+const float kDefaultBaseAnchorHeight = 0.5f;
 
 @interface BouncyComponent ()
 
