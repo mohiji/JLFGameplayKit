@@ -17,7 +17,6 @@
 		27114D5B1B473D080087655C /* yellow-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D441B4603150087655C /* yellow-dot.png */; };
 		27114D5C1B473D080087655C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B9C3F41B45F37500B61989 /* map.png */; };
 		272C94C71B3BC3030037FC7F /* Characters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 272C94C61B3BC3030037FC7F /* Characters.atlas */; };
-		272C94CA1B3BC4920037FC7F /* SpriteComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C94C91B3BC4920037FC7F /* SpriteComponent.m */; };
 		2760621D1B37C571000E505D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621C1B37C571000E505D /* AppDelegate.m */; };
 		2760621F1B37C571000E505D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621E1B37C571000E505D /* main.m */; };
 		276062221B37C571000E505D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062211B37C571000E505D /* GameScene.m */; };
@@ -33,6 +32,9 @@
 		27A9F8E21B55694900DD1FBE /* libJLFGameplayKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E255E21B51DB4200237994 /* libJLFGameplayKit.a */; };
 		27A9F8E31B55694E00DD1FBE /* libJLFGameplayKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E255E21B51DB4200237994 /* libJLFGameplayKit.a */; };
 		27A9F8E41B55696E00DD1FBE /* libJLFGameplayKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E2563A1B51DDB700237994 /* libJLFGameplayKit-iOS.a */; };
+		27A9F8E51B556F1400DD1FBE /* BouncyComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B995FE1B5562950096234A /* BouncyComponent.m */; };
+		27A9F8E61B556F1400DD1FBE /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B996001B5562950096234A /* CGPointMath.m */; };
+		27A9F8E71B556F1400DD1FBE /* SpriteComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B996041B5562B30096234A /* SpriteComponent.m */; };
 		27AA85771B47550D00AF2DDA /* PathFollowingComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA85761B47550D00AF2DDA /* PathFollowingComponent.m */; };
 		27AA85801B4779C400AF2DDA /* PathFollowingComponentStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA857F1B4779C400AF2DDA /* PathFollowingComponentStates.m */; };
 		27AD86F91B5370970009489D /* JLFGKGridGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 27AD86F51B5370970009489D /* JLFGKGridGraph.h */; };
@@ -107,7 +109,6 @@
 		27F00F4A1B5449E700DF3EB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F00F491B5449E700DF3EB7 /* Images.xcassets */; };
 		27F00F4D1B5449E700DF3EB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F00F4B1B5449E700DF3EB7 /* LaunchScreen.xib */; };
 		27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */; };
-		27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4E1B3C8C760088B785 /* CGPointMath.m */; };
 		27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */; };
 		27FE7D551B3CC35A0088B785 /* WanderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D541B3CC35A0088B785 /* WanderComponent.m */; };
 		27FE7D581B3CC7C60088B785 /* BouncyAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D571B3CC7C60088B785 /* BouncyAnimationComponent.m */; };
@@ -155,8 +156,6 @@
 		271C10891B44B25400BDFEEB /* JLFGKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGraph.h; sourceTree = "<group>"; };
 		271C108A1B44B25400BDFEEB /* JLFGKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGraph.m; sourceTree = "<group>"; };
 		272C94C61B3BC3030037FC7F /* Characters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Characters.atlas; sourceTree = "<group>"; };
-		272C94C81B3BC4920037FC7F /* SpriteComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteComponent.h; sourceTree = "<group>"; };
-		272C94C91B3BC4920037FC7F /* SpriteComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteComponent.m; sourceTree = "<group>"; };
 		276062161B37C571000E505D /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2760621A1B37C571000E505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2760621B1B37C571000E505D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -231,8 +230,6 @@
 		27F00F4C1B5449E700DF3EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
-		27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointMath.h; sourceTree = "<group>"; };
-		27FE7D4E1B3C8C760088B785 /* CGPointMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointMath.m; sourceTree = "<group>"; };
 		27FE7D501B3C8FFF0088B785 /* CharacterAnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterAnimationComponent.h; sourceTree = "<group>"; };
 		27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterAnimationComponent.m; sourceTree = "<group>"; };
 		27FE7D531B3CC35A0088B785 /* WanderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WanderComponent.h; sourceTree = "<group>"; };
@@ -335,15 +332,11 @@
 				27FE7D571B3CC7C60088B785 /* BouncyAnimationComponent.m */,
 				27FE7D501B3C8FFF0088B785 /* CharacterAnimationComponent.h */,
 				27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */,
-				27FE7D4D1B3C8C4D0088B785 /* CGPointMath.h */,
-				27FE7D4E1B3C8C760088B785 /* CGPointMath.m */,
 				276062201B37C571000E505D /* GameScene.h */,
 				276062211B37C571000E505D /* GameScene.m */,
 				276062231B37C571000E505D /* GameScene.sks */,
 				27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */,
 				27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */,
-				272C94C81B3BC4920037FC7F /* SpriteComponent.h */,
-				272C94C91B3BC4920037FC7F /* SpriteComponent.m */,
 				27FE7D531B3CC35A0088B785 /* WanderComponent.h */,
 				27FE7D541B3CC35A0088B785 /* WanderComponent.m */,
 				276062251B37C571000E505D /* Images.xcassets */,
@@ -749,15 +742,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A9F8E71B556F1400DD1FBE /* SpriteComponent.m in Sources */,
 				27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */,
 				27FE7D581B3CC7C60088B785 /* BouncyAnimationComponent.m in Sources */,
 				27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */,
 				2760621F1B37C571000E505D /* main.m in Sources */,
+				27A9F8E61B556F1400DD1FBE /* CGPointMath.m in Sources */,
 				276062221B37C571000E505D /* GameScene.m in Sources */,
 				2760621D1B37C571000E505D /* AppDelegate.m in Sources */,
 				27FE7D551B3CC35A0088B785 /* WanderComponent.m in Sources */,
-				272C94CA1B3BC4920037FC7F /* SpriteComponent.m in Sources */,
-				27FE7D4F1B3C8C760088B785 /* CGPointMath.m in Sources */,
+				27A9F8E51B556F1400DD1FBE /* BouncyComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

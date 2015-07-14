@@ -9,8 +9,6 @@
 #import "JLFGKComponent.h"
 @import SpriteKit;
 
-extern const CGFloat kDefaultBounceSpeed;
-
 @interface BouncyAnimationComponent : JLFGKComponent
 
 - (id)initWithBaseTextureName:(NSString *)baseTextureName characterAtlas:(SKTextureAtlas *)atlas;

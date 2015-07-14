@@ -11,7 +11,7 @@
 #import "SpriteComponent.h"
 #import "JLFGKEntity.h"
 
-const CGFloat kDefaultBounceSpeed = 0.1f;
+static const CGFloat kDefaultBounceSpeed = 0.1f;
 
 @interface BouncyAnimationComponent ()
 

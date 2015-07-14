@@ -8,8 +8,8 @@
 
 #import "MoveComponent.h"
 #import "JLFGKEntity.h"
-#import "SpriteComponent.h"
 #import "CGPointMath.h"
+#import "SpriteComponent.h"
 
 const CGFloat kDefaultPlayerMoveSpeed = 150.0f;
 const CGFloat kMoveStopThreshold = 4.0f;
