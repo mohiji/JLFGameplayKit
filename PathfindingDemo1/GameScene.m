@@ -39,7 +39,7 @@
     SpriteComponent *sprite = [[SpriteComponent alloc] init];
 
     sprite.sprite = (SKSpriteNode *)[self childNodeWithName:@"player"];
-    bouncy.baseAnchorHeight = sprite.sprite.anchorPoint.y;
+    bouncy.baseAnchorPoint = sprite.sprite.anchorPoint;
 
     SKNode *startNode = (SKNode *)[self.graphNodesToSceneNodes objectForKey:self.currentGraphNode];
     sprite.sprite.position = startNode.position;

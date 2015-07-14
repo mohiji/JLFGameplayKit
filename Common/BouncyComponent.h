@@ -7,6 +7,7 @@
 //
 
 #import "JLFGKComponent.h"
+@import CoreGraphics;
 
 extern const float kDefaultBounceSpeed;
 extern const float kDefaultBaseAnchorHeight;
@@ -14,7 +15,7 @@ extern const float kDefaultBaseAnchorHeight;
 @interface BouncyComponent : JLFGKComponent
 
 @property (assign, nonatomic) float bounceSpeed;
-@property (assign, nonatomic) float baseAnchorHeight;
+@property (assign, nonatomic) CGPoint baseAnchorPoint;
 
 - (void)startBouncing;
 - (void)stopBouncing;

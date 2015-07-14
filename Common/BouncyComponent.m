@@ -11,7 +11,6 @@
 #import "JLFGKEntity.h"
 
 const float kDefaultBounceSpeed = 0.18f;
-const float kDefaultBaseAnchorHeight = 0.5f;
 
 @interface BouncyComponent ()
 
@@ -28,7 +27,7 @@ const float kDefaultBaseAnchorHeight = 0.5f;
     self = [super init];
     if (self != nil) {
         self.bounceSpeed = kDefaultBounceSpeed;
-        self.baseAnchorHeight = kDefaultBaseAnchorHeight;
+        self.baseAnchorPoint = CGPointMake(0.5f, 0.5f);
     }
     return self;
 }
@@ -40,7 +39,7 @@ const float kDefaultBaseAnchorHeight = 0.5f;
     if (self.bouncing) {
         self.bounceTime += seconds;
         CGFloat offset = fabs(sin(self.bounceTime / (self.bounceSpeed / 2.0f))) / 3.0f;
-        sprite.sprite.anchorPoint = CGPointMake(0.5f, self.baseAnchorHeight - offset);
+        sprite.sprite.anchorPoint = CGPointMake(self.baseAnchorPoint.x, self.baseAnchorPoint.y - offset);
     }
 }
 
@@ -55,7 +54,7 @@ const float kDefaultBaseAnchorHeight = 0.5f;
     self.bouncing = NO;
 
     SpriteComponent *sprite = (SpriteComponent*)[self.entity componentForClass:[SpriteComponent class]];
-    sprite.sprite.anchorPoint = CGPointMake(0.5f, self.baseAnchorHeight);
+    sprite.sprite.anchorPoint = self.baseAnchorPoint;
 }
 
 @end
