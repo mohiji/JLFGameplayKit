@@ -4,6 +4,7 @@ So, since I want it now, and because I'm curious about how it's put together, I'
 
 This repository is a companion to a series of blog posts:
 
- * [Let's build GameplayKit - Components](http://www.jonathanfischer.net/lets-build-gameplaykit-components)
- * [Let's build GameplayKit - State Machines](http://www.jonathanfischer.net/lets-build-gameplaykit-state-machines)
- * [Let's build GameplayKit - Pathfinding](http://www.jonathanfischer.net/lets-build-gameplaykit-pathfinding)
+ * [Let's build GameplayKit - Components](http://www.jonathanfischer.net/lets-build-gameplaykit-components/)
+ * [Let's build GameplayKit - State Machines](http://www.jonathanfischer.net/lets-build-gameplaykit-state-machines/)
+ * [Let's build GameplayKit - Pathfinding](http://www.jonathanfischer.net/lets-build-gameplaykit-pathfinding/)
+ * [Let's build GameplayKit - Grid Based Pathfinding](http://www.jonathanfischer.net/lets-build-gameplaykit-grid-pathfinding/)
