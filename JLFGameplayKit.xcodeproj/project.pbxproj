@@ -16,6 +16,11 @@
 		27114D5A1B473D080087655C /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D431B4603150087655C /* target.png */; };
 		27114D5B1B473D080087655C /* yellow-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 27114D441B4603150087655C /* yellow-dot.png */; };
 		27114D5C1B473D080087655C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B9C3F41B45F37500B61989 /* map.png */; };
+		2720D2ED1B56FCD10088BEE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2E81B56FCD10088BEE1 /* Default-568h@2x.png */; };
+		2720D2EE1B56FCD10088BEE1 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2E91B56FCD10088BEE1 /* Default-iPhone6.png */; };
+		2720D2EF1B56FCD10088BEE1 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2EA1B56FCD10088BEE1 /* Default-iPhone6Plus.png */; };
+		2720D2F01B56FCD10088BEE1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2EB1B56FCD10088BEE1 /* Default.png */; };
+		2720D2F11B56FCD10088BEE1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2EC1B56FCD10088BEE1 /* Default@2x.png */; };
 		272C94C71B3BC3030037FC7F /* Characters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 272C94C61B3BC3030037FC7F /* Characters.atlas */; };
 		2760621D1B37C571000E505D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621C1B37C571000E505D /* AppDelegate.m */; };
 		2760621F1B37C571000E505D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621E1B37C571000E505D /* main.m */; };
@@ -107,8 +112,7 @@
 		27F00F3D1B5449E700DF3EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F00F3C1B5449E700DF3EB7 /* AppDelegate.m */; };
 		27F00F401B5449E700DF3EB7 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F00F3F1B5449E700DF3EB7 /* GameScene.m */; };
 		27F00F451B5449E700DF3EB7 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F00F441B5449E700DF3EB7 /* GameViewController.m */; };
-		27F00F4A1B5449E700DF3EB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F00F491B5449E700DF3EB7 /* Images.xcassets */; };
-		27F00F4D1B5449E700DF3EB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F00F4B1B5449E700DF3EB7 /* LaunchScreen.xib */; };
+		27F00F4A1B5449E700DF3EB7 /* Images-Demo2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F00F491B5449E700DF3EB7 /* Images-Demo2.xcassets */; };
 		27FE7D4C1B3C8AA80088B785 /* MoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */; };
 		27FE7D521B3C8FFF0088B785 /* CharacterAnimationComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D511B3C8FFF0088B785 /* CharacterAnimationComponent.m */; };
 		27FE7D551B3CC35A0088B785 /* WanderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE7D541B3CC35A0088B785 /* WanderComponent.m */; };
@@ -156,6 +160,11 @@
 		271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGraphNode.m; sourceTree = "<group>"; };
 		271C10891B44B25400BDFEEB /* JLFGKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGraph.h; sourceTree = "<group>"; };
 		271C108A1B44B25400BDFEEB /* JLFGKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGraph.m; sourceTree = "<group>"; };
+		2720D2E81B56FCD10088BEE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2720D2E91B56FCD10088BEE1 /* Default-iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6.png"; sourceTree = "<group>"; };
+		2720D2EA1B56FCD10088BEE1 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6Plus.png"; sourceTree = "<group>"; };
+		2720D2EB1B56FCD10088BEE1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2720D2EC1B56FCD10088BEE1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		272C94C61B3BC3030037FC7F /* Characters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Characters.atlas; sourceTree = "<group>"; };
 		276062161B37C571000E505D /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2760621A1B37C571000E505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,8 +238,7 @@
 		27F00F3F1B5449E700DF3EB7 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		27F00F431B5449E700DF3EB7 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		27F00F441B5449E700DF3EB7 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		27F00F491B5449E700DF3EB7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		27F00F4C1B5449E700DF3EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		27F00F491B5449E700DF3EB7 /* Images-Demo2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Demo2.xcassets"; sourceTree = "<group>"; };
 		27FE7D4A1B3C8AA80088B785 /* MoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveComponent.h; sourceTree = "<group>"; };
 		27FE7D4B1B3C8AA80088B785 /* MoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveComponent.m; sourceTree = "<group>"; };
 		27FE7D501B3C8FFF0088B785 /* CharacterAnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterAnimationComponent.h; sourceTree = "<group>"; };
@@ -477,9 +485,8 @@
 				27F00F441B5449E700DF3EB7 /* GameViewController.m */,
 				27A9F8E81B55799D00DD1FBE /* PathMoveComponent.h */,
 				27A9F8E91B55799D00DD1FBE /* PathMoveComponent.m */,
-				27F00F491B5449E700DF3EB7 /* Images.xcassets */,
+				27F00F491B5449E700DF3EB7 /* Images-Demo2.xcassets */,
 				27B995D91B54515D0096234A /* Main.storyboard */,
-				27F00F4B1B5449E700DF3EB7 /* LaunchScreen.xib */,
 				27F00F371B5449E700DF3EB7 /* Supporting Files */,
 			);
 			path = PathfindingDemo2;
@@ -488,6 +495,11 @@
 		27F00F371B5449E700DF3EB7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2720D2E81B56FCD10088BEE1 /* Default-568h@2x.png */,
+				2720D2E91B56FCD10088BEE1 /* Default-iPhone6.png */,
+				2720D2EA1B56FCD10088BEE1 /* Default-iPhone6Plus.png */,
+				2720D2EB1B56FCD10088BEE1 /* Default.png */,
+				2720D2EC1B56FCD10088BEE1 /* Default@2x.png */,
 				27F00F381B5449E700DF3EB7 /* Info.plist */,
 				27F00F391B5449E700DF3EB7 /* main.m */,
 			);
@@ -734,9 +746,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27F00F4D1B5449E700DF3EB7 /* LaunchScreen.xib in Resources */,
 				27B995DB1B54515D0096234A /* Main.storyboard in Resources */,
-				27F00F4A1B5449E700DF3EB7 /* Images.xcassets in Resources */,
+				2720D2F01B56FCD10088BEE1 /* Default.png in Resources */,
+				2720D2EE1B56FCD10088BEE1 /* Default-iPhone6.png in Resources */,
+				2720D2EF1B56FCD10088BEE1 /* Default-iPhone6Plus.png in Resources */,
+				27F00F4A1B5449E700DF3EB7 /* Images-Demo2.xcassets in Resources */,
+				2720D2F11B56FCD10088BEE1 /* Default@2x.png in Resources */,
+				2720D2ED1B56FCD10088BEE1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,14 +929,6 @@
 				27B9C3DE1B45F33700B61989 /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		27F00F4B1B5449E700DF3EB7 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27F00F4C1B5449E700DF3EB7 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1196,7 +1204,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PathfindingDemo2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1209,7 +1217,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PathfindingDemo2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

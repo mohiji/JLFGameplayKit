@@ -22,7 +22,17 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    GameScene *scene = [[GameScene alloc] initWithSize:self.view.bounds.size];
+
+    // On iOS 7 and earlier, bounds will always be the portrait size on a phone, so we need
+    // to account for that.
+    CGSize screenSize = self.view.bounds.size;
+    if (screenSize.height > screenSize.width) {
+        float temp = screenSize.width;
+        screenSize.width = screenSize.height;
+        screenSize.height = temp;
+    }
+
+    GameScene *scene = [[GameScene alloc] initWithSize:screenSize];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
@@ -31,12 +41,12 @@
 
 - (BOOL)shouldAutorotate
 {
-    return NO;
+    return YES;
 }
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL)prefersStatusBarHidden {
