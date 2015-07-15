@@ -21,6 +21,28 @@
 		2720D2EF1B56FCD10088BEE1 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2EA1B56FCD10088BEE1 /* Default-iPhone6Plus.png */; };
 		2720D2F01B56FCD10088BEE1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2EB1B56FCD10088BEE1 /* Default.png */; };
 		2720D2F11B56FCD10088BEE1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720D2EC1B56FCD10088BEE1 /* Default@2x.png */; };
+		2720D2F41B5701060088BEE1 /* JLFGKGraphNode2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 2720D2F21B5701060088BEE1 /* JLFGKGraphNode2D.h */; };
+		2720D2F51B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2F31B5701060088BEE1 /* JLFGKGraphNode2D.m */; };
+		2720D2F61B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2F31B5701060088BEE1 /* JLFGKGraphNode2D.m */; };
+		2720D2F71B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2F31B5701060088BEE1 /* JLFGKGraphNode2D.m */; };
+		2720D2F81B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2F31B5701060088BEE1 /* JLFGKGraphNode2D.m */; };
+		2720D2FE1B5705A90088BEE1 /* JLFGKObstacle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2720D2FC1B5705A90088BEE1 /* JLFGKObstacle.h */; };
+		2720D2FF1B5705A90088BEE1 /* JLFGKObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */; };
+		2720D3001B5705A90088BEE1 /* JLFGKObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */; };
+		2720D3011B5705A90088BEE1 /* JLFGKObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */; };
+		2720D3021B5705A90088BEE1 /* JLFGKObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */; };
+		2720D3051B5705BF0088BEE1 /* JLFGKCircleObstacle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2720D3031B5705BF0088BEE1 /* JLFGKCircleObstacle.h */; };
+		2720D3061B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D3041B5705BF0088BEE1 /* JLFGKCircleObstacle.m */; };
+		2720D3071B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D3041B5705BF0088BEE1 /* JLFGKCircleObstacle.m */; };
+		2720D3081B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D3041B5705BF0088BEE1 /* JLFGKCircleObstacle.m */; };
+		2720D3091B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D3041B5705BF0088BEE1 /* JLFGKCircleObstacle.m */; };
+		2720D30C1B5706710088BEE1 /* JLFGKPolygonObstacle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2720D30A1B5706710088BEE1 /* JLFGKPolygonObstacle.h */; };
+		2720D30D1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */; };
+		2720D30E1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */; };
+		2720D30F1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */; };
+		2720D3101B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */; };
+		2720D3121B5707EE0088BEE1 /* ObstacleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D3111B5707EE0088BEE1 /* ObstacleTests.m */; };
+		2720D3131B5708220088BEE1 /* ObstacleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720D3111B5707EE0088BEE1 /* ObstacleTests.m */; };
 		272C94C71B3BC3030037FC7F /* Characters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 272C94C61B3BC3030037FC7F /* Characters.atlas */; };
 		2760621D1B37C571000E505D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621C1B37C571000E505D /* AppDelegate.m */; };
 		2760621F1B37C571000E505D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2760621E1B37C571000E505D /* main.m */; };
@@ -165,6 +187,16 @@
 		2720D2EA1B56FCD10088BEE1 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6Plus.png"; sourceTree = "<group>"; };
 		2720D2EB1B56FCD10088BEE1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2720D2EC1B56FCD10088BEE1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2720D2F21B5701060088BEE1 /* JLFGKGraphNode2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGraphNode2D.h; sourceTree = "<group>"; };
+		2720D2F31B5701060088BEE1 /* JLFGKGraphNode2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKGraphNode2D.m; sourceTree = "<group>"; };
+		2720D2F91B5702BD0088BEE1 /* JLFGameplayKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLFGameplayKit.h; sourceTree = "<group>"; };
+		2720D2FC1B5705A90088BEE1 /* JLFGKObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKObstacle.h; sourceTree = "<group>"; };
+		2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKObstacle.m; sourceTree = "<group>"; };
+		2720D3031B5705BF0088BEE1 /* JLFGKCircleObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKCircleObstacle.h; sourceTree = "<group>"; };
+		2720D3041B5705BF0088BEE1 /* JLFGKCircleObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKCircleObstacle.m; sourceTree = "<group>"; };
+		2720D30A1B5706710088BEE1 /* JLFGKPolygonObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKPolygonObstacle.h; sourceTree = "<group>"; };
+		2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKPolygonObstacle.m; sourceTree = "<group>"; };
+		2720D3111B5707EE0088BEE1 /* ObstacleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObstacleTests.m; sourceTree = "<group>"; };
 		272C94C61B3BC3030037FC7F /* Characters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Characters.atlas; sourceTree = "<group>"; };
 		276062161B37C571000E505D /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2760621A1B37C571000E505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -370,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				2760624B1B37CE96000E505D /* ComponentTests.m */,
+				2720D3111B5707EE0088BEE1 /* ObstacleTests.m */,
 				27D343DD1B45A9F400172A4D /* PathfindingTests.m */,
 				27B9C3C71B45C5E000B61989 /* PriorityQueueTests.m */,
 				27B7E4C11B3E05CA00705D17 /* StateMachineTests.m */,
@@ -389,6 +422,9 @@
 		2760623E1B37C59C000E505D /* JLFGameplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				2720D2F91B5702BD0088BEE1 /* JLFGameplayKit.h */,
+				2720D3031B5705BF0088BEE1 /* JLFGKCircleObstacle.h */,
+				2720D3041B5705BF0088BEE1 /* JLFGKCircleObstacle.m */,
 				276062421B37C5D2000E505D /* JLFGKComponent.h */,
 				276062431B37C5D2000E505D /* JLFGKComponent.m */,
 				276062481B37C63F000E505D /* JLFGKComponent+Private.h */,
@@ -401,10 +437,16 @@
 				271C108A1B44B25400BDFEEB /* JLFGKGraph.m */,
 				271C10861B44B0C900BDFEEB /* JLFGKGraphNode.h */,
 				271C10871B44B0C900BDFEEB /* JLFGKGraphNode.m */,
+				2720D2F21B5701060088BEE1 /* JLFGKGraphNode2D.h */,
+				2720D2F31B5701060088BEE1 /* JLFGKGraphNode2D.m */,
 				27AD86F51B5370970009489D /* JLFGKGridGraph.h */,
 				27AD86F61B5370970009489D /* JLFGKGridGraph.m */,
 				27AD86F71B5370970009489D /* JLFGKGridGraphNode.h */,
 				27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */,
+				2720D2FC1B5705A90088BEE1 /* JLFGKObstacle.h */,
+				2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */,
+				2720D30A1B5706710088BEE1 /* JLFGKPolygonObstacle.h */,
+				2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */,
 				27B9C3C41B45C0B600B61989 /* JLFGKSimplePriorityQueue.h */,
 				27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */,
 				27B7E4BD1B3E057500705D17 /* JLFGKState.h */,
@@ -513,8 +555,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2720D2FE1B5705A90088BEE1 /* JLFGKObstacle.h in Headers */,
 				27AD86FB1B5370970009489D /* JLFGKGridGraphNode.h in Headers */,
 				27AD86F91B5370970009489D /* JLFGKGridGraph.h in Headers */,
+				2720D30C1B5706710088BEE1 /* JLFGKPolygonObstacle.h in Headers */,
+				2720D2F41B5701060088BEE1 /* JLFGKGraphNode2D.h in Headers */,
+				2720D3051B5705BF0088BEE1 /* JLFGKCircleObstacle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +702,6 @@
 					};
 					2760622D1B37C571000E505D = {
 						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 276062151B37C571000E505D;
 					};
 					27B9C3CC1B45F33700B61989 = {
 						CreatedOnToolsVersion = 6.4;
@@ -783,9 +828,13 @@
 				27B7E4C31B3E064600705D17 /* StateMachineTests.m in Sources */,
 				2760624D1B37D06D000E505D /* JLFGKEntity.m in Sources */,
 				279C7CFA1B3E59A400456EE4 /* JLFGKStateMachine.m in Sources */,
+				2720D3001B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
 				2760624E1B37D06D000E505D /* JLFGKComponent.m in Sources */,
+				2720D3071B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */,
 				27D343E11B45AA3000172A4D /* JLFGKGraphNode.m in Sources */,
 				2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */,
+				2720D30E1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
+				2720D2F61B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
 				276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */,
 				27114D4B1B4627100087655C /* JLFGKSimplePriorityQueue.m in Sources */,
 				27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */,
@@ -793,6 +842,7 @@
 				27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */,
 				27AD86FE1B537D590009489D /* JLFGKGridGraphNode.m in Sources */,
 				27114D4C1B4627100087655C /* JLFGKState+Private.m in Sources */,
+				2720D3121B5707EE0088BEE1 /* ObstacleTests.m in Sources */,
 				27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */,
 				2760624C1B37CE96000E505D /* ComponentTests.m in Sources */,
 				27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */,
@@ -822,14 +872,18 @@
 				27AD86FA1B5370970009489D /* JLFGKGridGraph.m in Sources */,
 				27E255F91B51DB6A00237994 /* JLFGKComponent.m in Sources */,
 				27E255FD1B51DB6A00237994 /* JLFGKGraph.m in Sources */,
+				2720D30D1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
 				27E255FC1B51DB6A00237994 /* JLFGKEntity.m in Sources */,
 				27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */,
 				27E255FF1B51DB6A00237994 /* JLFGKSimplePriorityQueue.m in Sources */,
+				2720D2F51B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
 				27AD86FC1B5370970009489D /* JLFGKGridGraphNode.m in Sources */,
+				2720D3061B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */,
 				27E255FA1B51DB6A00237994 /* JLFGKComponent+Private.m in Sources */,
 				27E255FB1B51DB6A00237994 /* JLFGKComponentSystem.m in Sources */,
 				27E256001B51DB6A00237994 /* JLFGKState.m in Sources */,
 				27E256021B51DB6A00237994 /* JLFGKStateMachine.m in Sources */,
+				2720D2FF1B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,14 +895,18 @@
 				27AD86FF1B537D5A0009489D /* JLFGKGridGraph.m in Sources */,
 				27E256511B51DDE400237994 /* JLFGKComponent.m in Sources */,
 				27E256551B51DDE400237994 /* JLFGKGraph.m in Sources */,
+				2720D30F1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
 				27E256541B51DDE400237994 /* JLFGKEntity.m in Sources */,
 				27E256591B51DDE400237994 /* JLFGKState+Private.m in Sources */,
 				27E256571B51DDE400237994 /* JLFGKSimplePriorityQueue.m in Sources */,
+				2720D2F71B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
 				27AD87001B537D5A0009489D /* JLFGKGridGraphNode.m in Sources */,
+				2720D3081B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */,
 				27E256521B51DDE400237994 /* JLFGKComponent+Private.m in Sources */,
 				27E256531B51DDE400237994 /* JLFGKComponentSystem.m in Sources */,
 				27E256581B51DDE400237994 /* JLFGKState.m in Sources */,
 				27E2565A1B51DDE400237994 /* JLFGKStateMachine.m in Sources */,
+				2720D3011B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,9 +917,13 @@
 				27E2565D1B51DDE700237994 /* PriorityQueueTests.m in Sources */,
 				27B995F51B54C9770096234A /* JLFGKEntity.m in Sources */,
 				27B995FB1B54C9770096234A /* JLFGKStateMachine.m in Sources */,
+				2720D3021B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
 				27B995F41B54C9770096234A /* JLFGKComponentSystem.m in Sources */,
+				2720D3091B5705BF0088BEE1 /* JLFGKCircleObstacle.m in Sources */,
 				27AD87021B537D5B0009489D /* JLFGKGridGraphNode.m in Sources */,
 				27B995F61B54C9770096234A /* JLFGKGraph.m in Sources */,
+				2720D3101B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
+				2720D2F81B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
 				27B995F71B54C9770096234A /* JLFGKGraphNode.m in Sources */,
 				27B995F31B54C9770096234A /* JLFGKComponent+Private.m in Sources */,
 				27B995F81B54C9770096234A /* JLFGKSimplePriorityQueue.m in Sources */,
@@ -869,6 +931,7 @@
 				27B995FA1B54C9770096234A /* JLFGKState+Private.m in Sources */,
 				27E2565B1B51DDE700237994 /* ComponentTests.m in Sources */,
 				27E2565E1B51DDE700237994 /* StateMachineTests.m in Sources */,
+				2720D3131B5708220088BEE1 /* ObstacleTests.m in Sources */,
 				27AD87011B537D5B0009489D /* JLFGKGridGraph.m in Sources */,
 				27B995F91B54C9770096234A /* JLFGKState.m in Sources */,
 				27B995F21B54C9770096234A /* JLFGKComponent.m in Sources */,
@@ -1038,7 +1101,6 @@
 		2760623C1B37C571000E505D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1051,14 +1113,12 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = JLFGameplayKitTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLFGameplayKit.app/Contents/MacOS/JLFGameplayKit";
 			};
 			name = Debug;
 		};
 		2760623D1B37C571000E505D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1067,7 +1127,6 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = JLFGameplayKitTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLFGameplayKit.app/Contents/MacOS/JLFGameplayKit";
 			};
 			name = Release;
 		};

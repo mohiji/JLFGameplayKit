@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
-#import "JLFGKGraphNode.h"
-#import "JLFGKGraph.h"
-#import "JLFGKGridGraph.h"
+#import "JLFGameplayKit.h"
 
 @interface PathfindingTests : XCTestCase
 @end
@@ -726,4 +724,24 @@
 
     XCTAssertEqualObjects(goal, [path lastObject]);
 }
+
+- (void)test2DNodeCreation
+{
+    XCTAssertThrows([[JLFGKGraphNode2D alloc] init]);
+
+    JLFGKGraphNode2D *node = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){0, 0}];
+    XCTAssertNotNil(node);
+}
+
+- (void)test2DNodeCosts
+{
+    JLFGKGraphNode2D *node1 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){2, 2}];
+    JLFGKGraphNode2D *node2 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){2, 4}];
+
+    float costNode1ToNode2 = [node1 costToNode:node2];
+    float costNode2ToNode1 = [node2 costToNode:node1];
+    XCTAssertEqual(costNode1ToNode2, 2.0f);
+    XCTAssertEqual(costNode1ToNode2, costNode2ToNode1);
+}
+
 @end
