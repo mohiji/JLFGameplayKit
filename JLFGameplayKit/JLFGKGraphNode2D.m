@@ -55,4 +55,8 @@ static float vector_float2_distance(vector_float2 a, vector_float2 b)
     return vector_float2_distance(other.position, self.position);
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"{%.2f, %.2f}", self.position.x, self.position.y];
+}
 @end

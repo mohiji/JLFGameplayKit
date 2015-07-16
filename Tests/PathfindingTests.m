@@ -744,4 +744,60 @@
     XCTAssertEqual(costNode1ToNode2, costNode2ToNode1);
 }
 
+- (void)test2DNodeSimplePathfinding
+{
+    // I drew out a graph by hand on graph paper to set up this test. You'll just have to trust
+    // that I did it right. :-P
+    JLFGKGraphNode2D *n0, *n1, *n2, *n3, *n4, *n5, *n6, *n7, *n8, *n9, *n10, *n11, *n12;
+
+    n0 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){4, 15}];
+    n1 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){5, 7}];
+    n2 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){7, 11}];
+    n3 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){9, 18}];
+    n4 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){11, 5}];
+    n5 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){13, 10}];
+    n6 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){15, 19}];
+    n7 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){17, 16}];
+    n8 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){21, 12}];
+    n9 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){20, 8}];
+    n10 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){16, 3}];
+    n11 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){24, 4}];
+
+    // This one's left unconnected to the rest.
+    n12 = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){21, 19}];
+
+    // These connections are all bidirectional, it's just easier for me to reason about if I lay them
+    // all out explicity
+    [n0 addConnectionsToNodes:@[n1, n2, n3] bidirectional:NO];
+    [n1 addConnectionsToNodes:@[n0, n2, n4] bidirectional:NO];
+    [n2 addConnectionsToNodes:@[n0, n1, n3, n4] bidirectional:NO];
+    [n3 addConnectionsToNodes:@[n0, n2, n6] bidirectional:NO];
+    [n4 addConnectionsToNodes:@[n1, n2, n5, n10] bidirectional:NO];
+    [n5 addConnectionsToNodes:@[n2, n4, n7] bidirectional:NO];
+    [n6 addConnectionsToNodes:@[n3, n7] bidirectional:NO];
+    [n7 addConnectionsToNodes:@[n5, n6] bidirectional:NO];
+    [n8 addConnectionsToNodes:@[n9, n11] bidirectional:NO];
+    [n9 addConnectionsToNodes:@[n8, n10, n11] bidirectional:NO];
+    [n10 addConnectionsToNodes:@[n4, n9, n11] bidirectional:NO];
+    [n11 addConnectionsToNodes:@[n8, n9, n10] bidirectional:NO];
+
+    NSArray *path = [n0 findPathToNode:n7];
+    XCTAssertEqual(path.count, 4);
+    XCTAssertEqualObjects(path[0], n0);
+    XCTAssertEqualObjects(path[1], n3);
+    XCTAssertEqualObjects(path[2], n6);
+    XCTAssertEqualObjects(path[3], n7);
+
+    path = [n0 findPathToNode:n8];
+    XCTAssertEqual(path.count, 6);
+    XCTAssertEqualObjects(path[0], n0);
+    XCTAssertEqualObjects(path[1], n2);
+    XCTAssertEqualObjects(path[2], n4);
+    XCTAssertEqualObjects(path[3], n10);
+    XCTAssertEqualObjects(path[4], n9);
+    XCTAssertEqualObjects(path[5], n8);
+
+    path = [n0 findPathToNode:n12];
+    XCTAssertNil(path);
+}
 @end
