@@ -36,6 +36,17 @@
     return self;
 }
 
+- (instancetype)init
+{
+    NSAssert(NO, @"JLFGKPolygonObstacle instances must be initialized via -initWithPoints:count:");
+    return nil;
+}
+
+- (void)dealloc
+{
+    free(self.vertices);
+}
+
 - (vector_float2)vertexAtIndex:(NSUInteger)idx
 {
     NSAssert(idx < self.vertexCount, @"JLFGKPolygonObstacle -vertexAtIndex: Index is out of range.");
