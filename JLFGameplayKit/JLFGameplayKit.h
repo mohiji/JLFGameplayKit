@@ -16,6 +16,7 @@
 #import "JLFGKGridGraphNode.h"
 #import "JLFGKGraph.h"
 #import "JLFGKGridGraph.h"
+#import "JLFGKObstacleGraph.h"
 
 #import "JLFGKState.h"
 #import "JLFGKStateMachine.h"
