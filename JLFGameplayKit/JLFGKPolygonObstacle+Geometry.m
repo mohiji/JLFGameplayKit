@@ -61,11 +61,11 @@
     NSMutableArray *nodes = [NSMutableArray arrayWithCapacity:self.vertexCount];
     for (NSUInteger i = 0; i < numVertices; i++) {
         const vector_float2 point = [self vertexAtIndex:i];
-        vector_float2 dv = vector_float2_subtract(point, centroid);
-        dv = vector_float2_normalized(dv);
-        dv = vector_float2_scale(dv, radius);
+        vector_float2 dv = {point.x - centroid.x, point.y - centroid.y};
+        dv = vector_normalize(dv);
+        dv = (vector_float2){dv.x * radius, dv.y * radius};
 
-        vector_float2 result = vector_float2_add(point, dv);
+        vector_float2 result = {point.x + dv.x, point.y + dv.y};
         [nodes addObject:[JLFGKGraphNode2D nodeWithPoint:result]];
     }
 

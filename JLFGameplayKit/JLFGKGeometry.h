@@ -9,9 +9,8 @@
 #pragma once
 
 #include <simd/vector.h>
+#include <stdbool.h>
 
-extern float vector_float2_magnitude(vector_float2 v);
-extern vector_float2 vector_float2_normalized(vector_float2 v);
-extern vector_float2 vector_float2_add(vector_float2 v1, vector_float2 v2);
-extern vector_float2 vector_float2_subtract(vector_float2 v1, vector_float2 v2);
-extern vector_float2 vector_float2_scale(vector_float2 v, float scalar);
+// Returns true if there's an intersection between the two lines defined by the
+// endpoints {p1, p2} and {q1, q2}. Note that those are endpoints, not point + direction.
+extern bool line_segments_intersect(vector_float2 p1, vector_float2 p2, vector_float2 q1, vector_float2 q2);

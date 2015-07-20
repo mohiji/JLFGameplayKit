@@ -7,6 +7,7 @@
 //
 
 #import "JLFGKGraph.h"
+#import "JLFGKGraphNode2D.h"
 #import "JLFGKPolygonObstacle.h"
 
 @interface JLFGKObstacleGraph : JLFGKGraph
@@ -21,5 +22,18 @@
 - (void)removeObstacles:(NSArray *)obstacles;
 - (void)removeAllObstacles;
 - (NSArray *)nodesForObstacle:(JLFGKPolygonObstacle *)obstacle;
+
+- (void)connectNodeUsingObstacles:(JLFGKGraphNode2D *)node;
+- (void)connectNodeUsingObstacles:(JLFGKGraphNode2D *)node
+                ignoringObstacles:(NSArray *)obstaclesToIgnore;
+
+- (void)lockConnectionFromNode:(JLFGKGraphNode2D *)startNode
+                        toNode:(JLFGKGraphNode2D *)endNode;
+
+- (void)unlockConnectionFromNode:(JLFGKGraphNode2D *)startNode
+                          toNode:(JLFGKGraphNode2D *)endNode;
+
+- (BOOL)isConnectionLockedFromNode:(JLFGKGraphNode2D *)startNode
+                            toNode:(JLFGKGraphNode2D *)endNode;
 
 @end

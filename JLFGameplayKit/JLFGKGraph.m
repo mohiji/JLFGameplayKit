@@ -39,7 +39,13 @@
 - (void)addNodes:(NSArray *)nodes
 {
     NSAssert(nodes != nil, @"JLFGKGraph -addNodes: Cannot be called with a nil nodes array.");
-    [self.realNodes addObjectsFromArray:nodes];
+
+    // Make sure we're not adding any duplicates
+    for (JLFGKGraphNode *node in nodes) {
+        if (![self.realNodes containsObject:node]) {
+            [self.realNodes addObject:node];
+        }
+    }
 }
 
 - (void)connectNodeToLowestCostNode:(JLFGKGraphNode *)node bidirectional:(BOOL)bidirectional

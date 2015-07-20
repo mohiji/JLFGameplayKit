@@ -6,20 +6,13 @@
 //
 
 #import "JLFGKGraphNode2D.h"
+#import "JLFGKGraphNode2D+Private.h"
 
-static float vector_float2_distance(vector_float2 a, vector_float2 b)
-{
-    vector_float2 diff;
-    diff.x = a.x - b.x;
-    diff.y = a.y - b.y;
+@interface JLFGKGraphNode2D ()
 
-    float magnitudeSquared = diff.x * diff.x + diff.y * diff.y;
-    if (magnitudeSquared != 0) {
-        return sqrtf(magnitudeSquared);
-    } else {
-        return 0;
-    }
-}
+@property (strong, nonatomic) NSMutableSet *lockedConnections;
+
+@end
 
 @implementation JLFGKGraphNode2D
 
@@ -39,6 +32,7 @@ static float vector_float2_distance(vector_float2 a, vector_float2 b)
     self = [super init];
     if (self != nil) {
         self.position = point;
+        self.lockedConnections = [NSMutableSet set];
     }
     return self;
 }
@@ -52,11 +46,12 @@ static float vector_float2_distance(vector_float2 a, vector_float2 b)
 {
     NSAssert([node isKindOfClass:[JLFGKGraphNode2D class]], @"JLFGKGraphNode2D -costToNode: Only works with JLFGKGraphNode2D.");
     JLFGKGraphNode2D *other = (JLFGKGraphNode2D *)node;
-    return vector_float2_distance(other.position, self.position);
+    return vector_distance(other.position, self.position);
 }
 
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"{%.2f, %.2f}", self.position.x, self.position.y];
 }
+
 @end

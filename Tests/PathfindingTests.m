@@ -800,4 +800,184 @@
     path = [n0 findPathToNode:n12];
     XCTAssertNil(path);
 }
+
+- (void)testObstacleGraphNoObstacles
+{
+    int numNodes = 5;
+    NSMutableArray *nodes = [NSMutableArray arrayWithCapacity:numNodes];
+
+    JLFGKObstacleGraph *graph = [JLFGKObstacleGraph graphWithObstacles:@[] bufferRadius:10.0f];
+
+    for (int i = 0; i < numNodes; i++) {
+        int x = arc4random_uniform(50) - 50;
+        int y = arc4random_uniform(50) - 50;
+        JLFGKGraphNode2D *node = [JLFGKGraphNode2D nodeWithPoint:(vector_float2){x, y}];
+        [graph connectNodeUsingObstacles:node];
+        [nodes addObject:node];
+    }
+
+    XCTAssertEqual(graph.nodes.count, numNodes);
+    for (JLFGKGraphNode2D *node in nodes) {
+        XCTAssertEqual(node.connectedNodes.count, numNodes - 1);
+        for (JLFGKGraphNode *other in nodes) {
+            if (node == other) {
+                continue;
+            }
+
+            XCTAssertTrue([node.connectedNodes containsObject:other]);
+
+            NSArray *path = [graph findPathFromNode:node toNode:other];
+            XCTAssertNotNil(path);
+            XCTAssertEqual(path.count, 2);
+            XCTAssertEqualObjects([path firstObject], node);
+            XCTAssertEqualObjects([path lastObject], other);
+        }
+    }
+}
+
+- (void)testObstacleGraphAddObstacles
+{
+    vector_float2 points1[] = {
+        {7, 12},
+        {5, 9},
+        {6, 6},
+        {8, 6},
+        {9, 9}
+    };
+
+    vector_float2 points2[] = {
+        {10, 17},
+        {21, 17},
+        {21, 20},
+        {10, 20}
+    };
+
+    JLFGKPolygonObstacle *obstacle1 = [JLFGKPolygonObstacle obstacleWithPoints:points1 count:5];
+    JLFGKPolygonObstacle *obstacle2 = [JLFGKPolygonObstacle obstacleWithPoints:points2 count:4];
+
+    JLFGKObstacleGraph *graph = [JLFGKObstacleGraph graphWithObstacles:@[obstacle1]
+                                                          bufferRadius:1.0f];
+
+    // Each obstacle's nodes should be connected in a loop around the obstacle.
+    NSArray *nodes1 = [graph nodesForObstacle:obstacle1];
+    XCTAssertEqual(nodes1.count, 5);
+    for (int i = 0; i < nodes1.count; i++) {
+        JLFGKGraphNode2D *current = nodes1[i];
+        JLFGKGraphNode2D *previous = nodes1[(i + nodes1.count - 1) % nodes1.count];
+        JLFGKGraphNode2D *next = nodes1[(i + 1) % nodes1.count];
+
+        XCTAssertEqual(current.connectedNodes.count, 2);
+        XCTAssertTrue([current.connectedNodes containsObject:previous]);
+        XCTAssertTrue([current.connectedNodes containsObject:next]);
+    }
+
+    [graph addObstacles:@[obstacle2]];
+    XCTAssertEqual(graph.nodes.count, 9);
+
+    NSArray *nodes2 = [graph nodesForObstacle:obstacle2];
+    XCTAssertEqual(nodes2.count, 4);
+
+    JLFGKGraphNode2D *n0 = nodes1[0];
+    JLFGKGraphNode2D *n1 = nodes1[1];
+    JLFGKGraphNode2D *n2 = nodes1[2];
+    JLFGKGraphNode2D *n3 = nodes1[3];
+    JLFGKGraphNode2D *n4 = nodes1[4];
+    JLFGKGraphNode2D *n5 = nodes2[0];
+    JLFGKGraphNode2D *n6 = nodes2[1];
+    JLFGKGraphNode2D *n7 = nodes2[2];
+    JLFGKGraphNode2D *n8 = nodes2[3];
+
+    NSLog(@"n0 -> n6: {%.5f, %.5f} -> {%.5f, %.5f}", n0.position.x, n0.position.y, n6.position.x, n6.position.y);
+
+    XCTAssertEqual([n0.connectedNodes containsObject:n0], NO);
+    XCTAssertEqual([n0.connectedNodes containsObject:n1], YES);
+    XCTAssertEqual([n0.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n0.connectedNodes containsObject:n3], NO);
+    XCTAssertEqual([n0.connectedNodes containsObject:n4], YES);
+    XCTAssertEqual([n0.connectedNodes containsObject:n5], YES);
+    XCTAssertEqual([n0.connectedNodes containsObject:n6], YES);
+    XCTAssertEqual([n0.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n0.connectedNodes containsObject:n8], YES);
+
+    XCTAssertEqual([n1.connectedNodes containsObject:n0], YES);
+    XCTAssertEqual([n1.connectedNodes containsObject:n1], NO);
+    XCTAssertEqual([n1.connectedNodes containsObject:n2], YES);
+    XCTAssertEqual([n1.connectedNodes containsObject:n3], NO);
+    XCTAssertEqual([n1.connectedNodes containsObject:n4], NO);
+    XCTAssertEqual([n1.connectedNodes containsObject:n5], YES);
+    XCTAssertEqual([n1.connectedNodes containsObject:n6], NO);
+    XCTAssertEqual([n1.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n1.connectedNodes containsObject:n8], YES);
+
+    XCTAssertEqual([n2.connectedNodes containsObject:n0], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n1], YES);
+    XCTAssertEqual([n2.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n3], YES);
+    XCTAssertEqual([n2.connectedNodes containsObject:n4], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n5], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n6], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n2.connectedNodes containsObject:n8], NO);
+
+    XCTAssertEqual([n3.connectedNodes containsObject:n0], NO);
+    XCTAssertEqual([n3.connectedNodes containsObject:n1], NO);
+    XCTAssertEqual([n3.connectedNodes containsObject:n2], YES);
+    XCTAssertEqual([n3.connectedNodes containsObject:n3], NO);
+    XCTAssertEqual([n3.connectedNodes containsObject:n4], YES);
+    XCTAssertEqual([n3.connectedNodes containsObject:n5], NO);
+    XCTAssertEqual([n3.connectedNodes containsObject:n6], YES);
+    XCTAssertEqual([n3.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n3.connectedNodes containsObject:n8], NO);
+
+    XCTAssertEqual([n4.connectedNodes containsObject:n0], YES);
+    XCTAssertEqual([n4.connectedNodes containsObject:n1], NO);
+    XCTAssertEqual([n4.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n4.connectedNodes containsObject:n3], YES);
+    XCTAssertEqual([n4.connectedNodes containsObject:n4], NO);
+    XCTAssertEqual([n4.connectedNodes containsObject:n5], YES);
+    XCTAssertEqual([n4.connectedNodes containsObject:n6], YES);
+    XCTAssertEqual([n4.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n4.connectedNodes containsObject:n8], NO);
+
+    XCTAssertEqual([n5.connectedNodes containsObject:n0], YES);
+    XCTAssertEqual([n5.connectedNodes containsObject:n1], YES);
+    XCTAssertEqual([n5.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n5.connectedNodes containsObject:n3], NO);
+    XCTAssertEqual([n5.connectedNodes containsObject:n4], YES);
+    XCTAssertEqual([n5.connectedNodes containsObject:n5], NO);
+    XCTAssertEqual([n5.connectedNodes containsObject:n6], YES);
+    XCTAssertEqual([n5.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n5.connectedNodes containsObject:n8], YES);
+
+    XCTAssertEqual([n6.connectedNodes containsObject:n0], YES);
+    XCTAssertEqual([n6.connectedNodes containsObject:n1], NO);
+    XCTAssertEqual([n6.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n6.connectedNodes containsObject:n3], YES);
+    XCTAssertEqual([n6.connectedNodes containsObject:n4], YES);
+    XCTAssertEqual([n6.connectedNodes containsObject:n5], YES);
+    XCTAssertEqual([n6.connectedNodes containsObject:n6], NO);
+    XCTAssertEqual([n6.connectedNodes containsObject:n7], YES);
+    XCTAssertEqual([n6.connectedNodes containsObject:n8], NO);
+
+    XCTAssertEqual([n7.connectedNodes containsObject:n0], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n1], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n3], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n4], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n5], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n6], YES);
+    XCTAssertEqual([n7.connectedNodes containsObject:n7], NO);
+    XCTAssertEqual([n7.connectedNodes containsObject:n8], YES);
+
+    XCTAssertEqual([n8.connectedNodes containsObject:n0], YES);
+    XCTAssertEqual([n8.connectedNodes containsObject:n1], YES);
+    XCTAssertEqual([n8.connectedNodes containsObject:n2], NO);
+    XCTAssertEqual([n8.connectedNodes containsObject:n3], NO);
+    XCTAssertEqual([n8.connectedNodes containsObject:n4], NO);
+    XCTAssertEqual([n8.connectedNodes containsObject:n5], YES);
+    XCTAssertEqual([n8.connectedNodes containsObject:n6], NO);
+    XCTAssertEqual([n8.connectedNodes containsObject:n7], YES);
+    XCTAssertEqual([n8.connectedNodes containsObject:n8], NO);
+}
+
 @end
