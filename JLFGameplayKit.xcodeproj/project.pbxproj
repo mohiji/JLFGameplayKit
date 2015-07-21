@@ -67,6 +67,16 @@
 		277F1DC41B582EF300AC8981 /* JLFGKGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DC11B582ED600AC8981 /* JLFGKGeometry.c */; };
 		277F1DC51B582EF300AC8981 /* JLFGKGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DC11B582ED600AC8981 /* JLFGKGeometry.c */; };
 		277F1DC81B5AB30D00AC8981 /* JLFGKGraphNode2D+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 277F1DC61B5AB30D00AC8981 /* JLFGKGraphNode2D+Private.h */; };
+		277F1DCF1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 277F1DCD1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		277F1DD01B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DCE1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m */; };
+		277F1DD11B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DCE1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m */; };
+		277F1DD21B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DCE1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m */; };
+		277F1DD31B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DCE1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m */; };
+		279928E91B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 279928E71B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.h */; };
+		279928EA1B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 279928E81B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m */; };
+		279928EB1B5E0CE6005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 279928E81B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m */; };
+		279928EC1B5E0CE6005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 279928E81B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m */; };
+		279928EE1B5E0CE8005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 279928E81B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m */; };
 		279C7CFA1B3E59A400456EE4 /* JLFGKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */; };
 		27A9F8E11B55691500DD1FBE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276062271B37C571000E505D /* MainMenu.xib */; };
 		27A9F8E21B55694900DD1FBE /* libJLFGameplayKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E255E21B51DB4200237994 /* libJLFGameplayKit.a */; };
@@ -251,6 +261,10 @@
 		277F1DBF1B582E5A00AC8981 /* JLFGKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKGeometry.h; sourceTree = "<group>"; };
 		277F1DC11B582ED600AC8981 /* JLFGKGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JLFGKGeometry.c; sourceTree = "<group>"; };
 		277F1DC61B5AB30D00AC8981 /* JLFGKGraphNode2D+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKGraphNode2D+Private.h"; sourceTree = "<group>"; };
+		277F1DCD1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKObstacleGraphConnection.h; sourceTree = "<group>"; };
+		277F1DCE1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKObstacleGraphConnection.m; sourceTree = "<group>"; };
+		279928E71B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKObstacleGraphUserNode.h; sourceTree = "<group>"; };
+		279928E81B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKObstacleGraphUserNode.m; sourceTree = "<group>"; };
 		27A9F8E81B55799D00DD1FBE /* PathMoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathMoveComponent.h; sourceTree = "<group>"; };
 		27A9F8E91B55799D00DD1FBE /* PathMoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathMoveComponent.m; sourceTree = "<group>"; };
 		27AA85751B47550D00AF2DDA /* PathFollowingComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFollowingComponent.h; sourceTree = "<group>"; };
@@ -485,6 +499,10 @@
 				2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */,
 				27B9362F1B576414007FEB54 /* JLFGKObstacleGraph.h */,
 				27B936301B576414007FEB54 /* JLFGKObstacleGraph.m */,
+				277F1DCD1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.h */,
+				277F1DCE1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m */,
+				279928E71B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.h */,
+				279928E81B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m */,
 				2720D30A1B5706710088BEE1 /* JLFGKPolygonObstacle.h */,
 				2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */,
 				277F1DB71B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h */,
@@ -612,6 +630,8 @@
 				2720D2F41B5701060088BEE1 /* JLFGKGraphNode2D.h in Headers */,
 				27B936391B576437007FEB54 /* JLFGKEntity.h in Headers */,
 				2720D3051B5705BF0088BEE1 /* JLFGKCircleObstacle.h in Headers */,
+				277F1DCF1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.h in Headers */,
+				279928E91B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.h in Headers */,
 				27B936311B576414007FEB54 /* JLFGKObstacleGraph.h in Headers */,
 				277F1DC81B5AB30D00AC8981 /* JLFGKGraphNode2D+Private.h in Headers */,
 				277F1DB91B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h in Headers */,
@@ -902,7 +922,9 @@
 				2720D3121B5707EE0088BEE1 /* ObstacleTests.m in Sources */,
 				27B9C3C81B45C5E000B61989 /* PriorityQueueTests.m in Sources */,
 				277F1DC41B582EF300AC8981 /* JLFGKGeometry.c in Sources */,
+				279928EB1B5E0CE6005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */,
 				2760624C1B37CE96000E505D /* ComponentTests.m in Sources */,
+				277F1DD11B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */,
 				27D343E01B45AA3000172A4D /* JLFGKGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,6 +954,7 @@
 				27E255F91B51DB6A00237994 /* JLFGKComponent.m in Sources */,
 				27E255FD1B51DB6A00237994 /* JLFGKGraph.m in Sources */,
 				2720D30D1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
+				277F1DD01B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */,
 				27E255FC1B51DB6A00237994 /* JLFGKEntity.m in Sources */,
 				27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */,
 				27E255FF1B51DB6A00237994 /* JLFGKSimplePriorityQueue.m in Sources */,
@@ -942,6 +965,7 @@
 				277F1DBA1B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.m in Sources */,
 				27E255FB1B51DB6A00237994 /* JLFGKComponentSystem.m in Sources */,
 				27E256001B51DB6A00237994 /* JLFGKState.m in Sources */,
+				279928EA1B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */,
 				27E256021B51DB6A00237994 /* JLFGKStateMachine.m in Sources */,
 				27B936321B576414007FEB54 /* JLFGKObstacleGraph.m in Sources */,
 				2720D2FF1B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
@@ -958,6 +982,7 @@
 				27E256511B51DDE400237994 /* JLFGKComponent.m in Sources */,
 				27E256551B51DDE400237994 /* JLFGKGraph.m in Sources */,
 				2720D30F1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
+				277F1DD21B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */,
 				27E256541B51DDE400237994 /* JLFGKEntity.m in Sources */,
 				27E256591B51DDE400237994 /* JLFGKState+Private.m in Sources */,
 				27E256571B51DDE400237994 /* JLFGKSimplePriorityQueue.m in Sources */,
@@ -968,6 +993,7 @@
 				277F1DBB1B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.m in Sources */,
 				27E256531B51DDE400237994 /* JLFGKComponentSystem.m in Sources */,
 				27E256581B51DDE400237994 /* JLFGKState.m in Sources */,
+				279928EC1B5E0CE6005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */,
 				27E2565A1B51DDE400237994 /* JLFGKStateMachine.m in Sources */,
 				27B936341B57641E007FEB54 /* JLFGKObstacleGraph.m in Sources */,
 				2720D3011B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
@@ -1001,7 +1027,9 @@
 				2720D3131B5708220088BEE1 /* ObstacleTests.m in Sources */,
 				27AD87011B537D5B0009489D /* JLFGKGridGraph.m in Sources */,
 				277F1DC51B582EF300AC8981 /* JLFGKGeometry.c in Sources */,
+				279928EE1B5E0CE8005A8C75 /* JLFGKObstacleGraphUserNode.m in Sources */,
 				27B995F91B54C9770096234A /* JLFGKState.m in Sources */,
+				277F1DD31B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */,
 				27B995F21B54C9770096234A /* JLFGKComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1229,6 +1257,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",

@@ -9,13 +9,16 @@
 #import "JLFGKObstacleGraph.h"
 #import "JLFGKPolygonObstacle+Geometry.h"
 #import "JLFGKGeometry.h"
+#import "JLFGKObstacleGraphUserNode.h"
+#import "JLFGKObstacleGraphConnection.h"
 
 @interface JLFGKObstacleGraph ()
 
 @property (strong, nonatomic) NSMapTable *obstacleToNodes;
 @property (assign, nonatomic) float bufferRadius;
 
-@property (strong, nonatomic) NSMapTable *lockedConnections;
+@property (strong, nonatomic) NSMutableArray *userNodes;
+@property (strong, nonatomic) NSMutableArray *lockedConnections;
 
 @end
 
@@ -43,8 +46,8 @@
     if (self != nil) {
         self.obstacleToNodes = [NSMapTable mapTableWithKeyOptions:NSMapTableObjectPointerPersonality
                                                      valueOptions:NSMapTableStrongMemory];
-        self.lockedConnections = [NSMapTable mapTableWithKeyOptions:NSMapTableObjectPointerPersonality
-                                                       valueOptions:NSMapTableStrongMemory];
+        self.lockedConnections = [NSMutableArray array];
+        self.userNodes = [NSMutableArray array];
         self.bufferRadius = radius;
         [self addObstacles:obstacles];
     }
@@ -71,18 +74,17 @@
 
 - (void)rebuildConnections
 {
-    // First, remove the nodes for each obstacle, and then make a copy of what's leftover.
-    // Those leftover nodes will be ones that the user added manually.
-    for (NSArray *nodes in [self.obstacleToNodes objectEnumerator]) {
-        [self removeNodes:nodes];
-    }
-    NSArray *userNodes = [self.nodes copy];
+    // The most straightforward way to do this is:
+    //  - Remove all nodes. Start with a clean slate.
+    //  - For each obstacle, connect all of its nodes together in a loop.
+    //  - Again for each obstacle, connect each of its nodes to every other
+    //    obstacle node that we can reach without intersecting an obstacle.
+    //  - Finally, for each user connection (added with
+    //    -connectNodeUsingObstacles:ignoringObstacles:)
+    [self removeNodes:self.nodes];
 
-    // Each obstacle's nodes should be connected in a loop around the obstacle.
-    // While we're at it, also build up a list of all the obstacle nodes in the graph:
-    // we'll use it while connecting obstacles up to each other in a moment.
+    // Connect each obstacle's nodes together in a loop.
     NSArray *obstacles = [[self.obstacleToNodes keyEnumerator] allObjects];
-    NSMutableArray *allObstacleNodes = [NSMutableArray array];
     for (JLFGKObstacle *obstacle in obstacles) {
         NSArray *nodes = [self.obstacleToNodes objectForKey:obstacle];
         NSUInteger numNodes = nodes.count;
@@ -95,9 +97,6 @@
 
         // Make sure the obstacle's nodes get back into the main node list.
         [self addNodes:nodes];
-
-        // And build up that list of all obstacle nodes
-        [allObstacleNodes addObjectsFromArray:nodes];
     }
 
     // Run through the obstacle list again. This time, connect the nodes for the obstacle
@@ -106,44 +105,34 @@
     // Man, that's a lot of nested loops.
     for (JLFGKObstacle *obstacle in obstacles) {
         NSArray *obstacleNodes = [self.obstacleToNodes objectForKey:obstacle];
-        NSMutableArray *otherNodes = [allObstacleNodes mutableCopy];
-        [otherNodes removeObjectsInArray:obstacleNodes];
 
-        for (JLFGKGraphNode2D *node in obstacleNodes) {
-            NSMutableArray *connections = [NSMutableArray array];
-            for (JLFGKGraphNode2D *otherNode in otherNodes) {
-                if (![self anyObstaclesBetweenStart:node.position
-                                                end:otherNode.position
-                                  ignoringObstacles:@[]]) {
-                    [connections addObject:otherNode];
-                }
+        for (JLFGKObstacle *otherObstacle in obstacles) {
+            // Don't connect the obstacle to itself
+            if (obstacle == otherObstacle) {
+                continue;
             }
-            [node addConnectionsToNodes:connections bidirectional:YES];
+
+            for (JLFGKGraphNode2D *node in obstacleNodes) {
+                NSMutableArray *connections = [NSMutableArray array];
+                for (JLFGKGraphNode2D *otherNode in [self.obstacleToNodes objectForKey:otherObstacle]) {
+                    if (![self anyObstaclesBetweenStart:node.position
+                                                    end:otherNode.position]) {
+                        [connections addObject:otherNode];
+                    }
+                }
+                [node addConnectionsToNodes:connections bidirectional:YES];
+            }
         }
     }
-//        NSArray *obstacleNodes = [self.obstacleToNodes objectForKey:obstacle];
-//
-//        for (JLFGKObstacle *otherObstacle in obstacles) {
-//            if (obstacle == otherObstacle) {
-//                continue;
-//            }
-//
-//            NSArray *otherNodes = [self.obstacleToNodes objectForKey:otherObstacle];
-//            for (JLFGKGraphNode2D *obstacleNode in obstacleNodes) {
-//                for (JLFGKGraphNode2D *otherNode in otherNodes) {
-//                    if (![self anyObstaclesBetweenStart:obstacleNode.position
-//                                                    end:otherNode.position
-//                                      ignoringObstacles:@[]]) {
-//                        [obstacleNode addConnectionsToNodes:@[otherNode] bidirectional:YES];
-//                    }
-//                }
-//            }
-//        }
-//    }
 
-    // Now take the leftover user nodes and connect them back up.
-    for (JLFGKGraphNode2D *node in userNodes) {
-        [self connectNodeUsingObstacles:node ignoringObstacles:@[]];
+    // Connect the user nodes back up
+    for (JLFGKObstacleGraphUserNode *userNode in self.userNodes) {
+        [self realConnectNodeUsingObstacles:userNode.node ignoringObstacles:userNode.ignoredObstacles];
+    }
+
+    // Put any connections that the user specifically asked for (via locking) back in place.
+    for (JLFGKObstacleGraphConnection *connection in self.lockedConnections) {
+        [connection.from addConnectionsToNodes:@[connection.to] bidirectional:YES];
     }
 }
 
@@ -172,6 +161,14 @@
 
 - (void)connectNodeUsingObstacles:(JLFGKGraphNode2D *)node ignoringObstacles:(NSArray *)obstaclesToIgnore
 {
+    JLFGKObstacleGraphUserNode *userNode = [[JLFGKObstacleGraphUserNode alloc] initWithNode:node
+                                                                           ignoredObstacles:obstaclesToIgnore];
+    [self.userNodes addObject:userNode];
+    [self realConnectNodeUsingObstacles:node ignoringObstacles:obstaclesToIgnore];
+}
+
+- (void)realConnectNodeUsingObstacles:(JLFGKGraphNode2D *)node ignoringObstacles:(NSArray *)obstaclesToIgnore
+{
     // For every node in the graph, if you can draw a line between this node and the other one without
     // bumping into an obstacle (not counting the ones in obstaclesToIgnore), then connect those nodes
     // together.
@@ -185,8 +182,7 @@
         vector_float2 end = other.position;
 
         if (![self anyObstaclesBetweenStart:start
-                                       end:end
-                         ignoringObstacles:obstaclesToIgnore]) {
+                                       end:end]) {
             [connections addObject:other];
         }
     }
@@ -222,7 +218,6 @@
 
 - (BOOL)anyObstaclesBetweenStart:(vector_float2)start
                              end:(vector_float2)end
-               ignoringObstacles:(NSArray *)obstaclesToIgnore
 {
     // This is horribly inefficient: it just loops through each obstacle comparing
     // each line segment that makes up the polygon with the start/end point. It
@@ -232,10 +227,6 @@
     // It should be augmented with a spatial partition of some kind, but for now
     // let's just get it working.
     for (JLFGKPolygonObstacle *obstacle in [self.obstacleToNodes keyEnumerator]) {
-        if ([obstaclesToIgnore containsObject:obstacle]) {
-            continue;
-        }
-
         NSArray *nodes = [self.obstacleToNodes objectForKey:obstacle];
         NSUInteger numNodes = nodes.count;
         for (NSUInteger i = 0; i < numNodes; i++) {
@@ -243,10 +234,6 @@
             JLFGKGraphNode2D *n2 = nodes[(i + 1) % numNodes];
 
             if (line_segments_intersect(start, end, n1.position, n2.position)) {
-                NSLog(@"Lines intersected: [{%.5f, %.5f} {%.5f, %.5f}] with [{%.5f, %.5f} {%.5f, %.5f}]",
-                      start.x, start.y, end.x, end.y,
-                      n1.position.x, n1.position.y,
-                      n2.position.x, n2.position.y);
                 return YES;
 
             }
@@ -257,32 +244,60 @@
 
 - (void)lockConnectionFromNode:(JLFGKGraphNode2D *)startNode toNode:(JLFGKGraphNode2D *)endNode
 {
-    NSMutableArray *connections = [self.lockedConnections objectForKey:startNode];
-    if (connections == nil) {
-        connections = [NSMutableArray array];
+    for (JLFGKObstacleGraphConnection *connection in self.lockedConnections) {
+        if (connection.from == startNode && connection.to == endNode) {
+            // This connection is already locked.
+            return;
+        }
     }
 
-    if (![connections containsObject:endNode]) {
-        [connections addObject:endNode];
-    }
+    JLFGKObstacleGraphConnection *connection = [JLFGKObstacleGraphConnection connectionFromNode:startNode toNode:endNode];
+    [self.lockedConnections addObject:connection];
 }
 
 - (void)unlockConnectionFromNode:(JLFGKGraphNode2D *)startNode toNode:(JLFGKGraphNode2D *)endNode
 {
-    NSMutableArray *connections = [self.lockedConnections objectForKey:startNode];
-    if (connections == nil) {
-        return;
+    NSMutableIndexSet *indices = [[NSMutableIndexSet alloc] init];
+    NSUInteger numConnections = self.lockedConnections.count;
+    for (NSUInteger i = 0; i < numConnections; i++) {
+        JLFGKObstacleGraphConnection *conn = self.lockedConnections[i];
+        if (conn.from == startNode && conn.to == endNode) {
+            [indices addIndex:i];
+        }
     }
 
-    [connections removeObject:endNode];
-
-    // TODO: Does unlocking a connection mean that it should be removed from startNode.connectedNodes?
+    [self.lockedConnections removeObjectsAtIndexes:indices];
 }
 
 - (BOOL)isConnectionLockedFromNode:(JLFGKGraphNode2D *)startNode toNode:(JLFGKGraphNode2D *)endNode
 {
-    NSArray *connections = [self.lockedConnections objectForKey:startNode];
-    return [connections containsObject:endNode];
+    for (JLFGKObstacleGraphConnection *connection in self.lockedConnections) {
+        if (connection.from == startNode && connection.to == endNode) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+#pragma mark - Overriden methods
+
+- (void)removeNodes:(NSArray *)nodes
+{
+    [super removeNodes:nodes];
+
+    NSUInteger numUserNodes = self.userNodes.count;
+    NSMutableIndexSet *indices = [NSMutableIndexSet indexSet];
+
+    for (JLFGKGraphNode2D *node in nodes) {
+        for (NSUInteger i = 0; i < numUserNodes; i++) {
+            JLFGKObstacleGraphUserNode *userNode = self.userNodes[i];
+            if (userNode.node == node) {
+                [indices addIndex:i];
+            }
+        }
+    }
+
+    [self.userNodes removeObjectsAtIndexes:indices];
 }
 
 @end

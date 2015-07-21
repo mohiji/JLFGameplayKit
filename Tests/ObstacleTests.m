@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 #import "JLFGameplayKit.h"
+#import "JLFGKObstacleGraphConnection.h"
 
 @interface ObstacleTests : XCTestCase
 
