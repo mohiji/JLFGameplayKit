@@ -81,6 +81,10 @@
     //    obstacle node that we can reach without intersecting an obstacle.
     //  - Finally, for each user connection (added with
     //    -connectNodeUsingObstacles:ignoringObstacles:)
+
+    // Before removing all the nodes, make a copy of userNodes. -removeNodes is
+    // overriden to clean up that array as well, and we don't want to lose that info
+    NSArray *userNodesCopy = [self.userNodes copy];
     [self removeNodes:self.nodes];
 
     // Connect each obstacle's nodes together in a loop.
@@ -116,7 +120,8 @@
                 NSMutableArray *connections = [NSMutableArray array];
                 for (JLFGKGraphNode2D *otherNode in [self.obstacleToNodes objectForKey:otherObstacle]) {
                     if (![self anyObstaclesBetweenStart:node.position
-                                                    end:otherNode.position]) {
+                                                    end:otherNode.position
+                                      ignoringObstacles:nil]) {
                         [connections addObject:otherNode];
                     }
                 }
@@ -126,7 +131,7 @@
     }
 
     // Connect the user nodes back up
-    for (JLFGKObstacleGraphUserNode *userNode in self.userNodes) {
+    for (JLFGKObstacleGraphUserNode *userNode in userNodesCopy) {
         [self realConnectNodeUsingObstacles:userNode.node ignoringObstacles:userNode.ignoredObstacles];
     }
 
@@ -182,7 +187,8 @@
         vector_float2 end = other.position;
 
         if (![self anyObstaclesBetweenStart:start
-                                       end:end]) {
+                                       end:end
+                          ignoringObstacles:obstaclesToIgnore]) {
             [connections addObject:other];
         }
     }
@@ -218,6 +224,7 @@
 
 - (BOOL)anyObstaclesBetweenStart:(vector_float2)start
                              end:(vector_float2)end
+               ignoringObstacles:(NSArray *)obstaclesToIgnore
 {
     // This is horribly inefficient: it just loops through each obstacle comparing
     // each line segment that makes up the polygon with the start/end point. It
@@ -227,6 +234,10 @@
     // It should be augmented with a spatial partition of some kind, but for now
     // let's just get it working.
     for (JLFGKPolygonObstacle *obstacle in [self.obstacleToNodes keyEnumerator]) {
+        if ([obstaclesToIgnore containsObject:obstacle]) {
+            continue;
+        }
+
         NSArray *nodes = [self.obstacleToNodes objectForKey:obstacle];
         NSUInteger numNodes = nodes.count;
         for (NSUInteger i = 0; i < numNodes; i++) {
@@ -285,6 +296,7 @@
 {
     [super removeNodes:nodes];
 
+    // Clean up user added nodes as well.
     NSUInteger numUserNodes = self.userNodes.count;
     NSMutableIndexSet *indices = [NSMutableIndexSet indexSet];
 

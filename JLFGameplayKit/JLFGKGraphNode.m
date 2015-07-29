@@ -57,9 +57,11 @@
     NSAssert(nodes != nil, @"JLFGKGraphNode -removeConnectionsToNodes:bidirectional: Cannot call with a nil nodes array.");
 
     for (JLFGKGraphNode *node in nodes) {
-        [self.nodes removeObject:node];
-        if (bidirectional) {
-            [node removeConnectionsToNodes:@[self] bidirectional:NO];
+        if ([self.nodes containsObject:node]) {
+            [self.nodes removeObject:node];
+            if (bidirectional) {
+                [node removeConnectionsToNodes:@[self] bidirectional:NO];
+            }
         }
     }
 }
