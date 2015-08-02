@@ -54,6 +54,22 @@
 		2760624E1B37D06D000E505D /* JLFGKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062431B37C5D2000E505D /* JLFGKComponent.m */; };
 		2760624F1B37D06D000E505D /* JLFGKComponentSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062461B37C5DC000E505D /* JLFGKComponentSystem.m */; };
 		276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 276062491B37C63F000E505D /* JLFGKComponent+Private.m */; };
+		2769EBC41B6EAD7500CADEEB /* JLFGKRandomSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2769EBC21B6EAD7500CADEEB /* JLFGKRandomSource.h */; };
+		2769EBC51B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBC31B6EAD7500CADEEB /* JLFGKRandomSource.m */; };
+		2769EBC61B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBC31B6EAD7500CADEEB /* JLFGKRandomSource.m */; };
+		2769EBC71B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBC31B6EAD7500CADEEB /* JLFGKRandomSource.m */; };
+		2769EBC81B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBC31B6EAD7500CADEEB /* JLFGKRandomSource.m */; };
+		2769EBCB1B6EAE0800CADEEB /* JLFGKSystemRandomSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2769EBC91B6EAE0800CADEEB /* JLFGKSystemRandomSource.h */; };
+		2769EBCC1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBCA1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m */; };
+		2769EBCD1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBCA1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m */; };
+		2769EBCE1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBCA1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m */; };
+		2769EBCF1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBCA1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m */; };
+		2769EBD11B6EAE6500CADEEB /* JLFGKRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 2769EBD01B6EAE6500CADEEB /* JLFGKRandom.h */; };
+		2769EBD41B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2769EBD21B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.h */; };
+		2769EBD51B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBD31B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m */; };
+		2769EBD61B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBD31B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m */; };
+		2769EBD71B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBD31B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m */; };
+		2769EBD81B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769EBD31B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m */; };
 		277F1DB51B58163700AC8981 /* GeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DB41B58163700AC8981 /* GeometryTests.m */; };
 		277F1DB61B58163A00AC8981 /* GeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F1DB41B58163700AC8981 /* GeometryTests.m */; };
 		277F1DB91B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 277F1DB71B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h */; };
@@ -255,6 +271,13 @@
 		276062481B37C63F000E505D /* JLFGKComponent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKComponent+Private.h"; sourceTree = "<group>"; };
 		276062491B37C63F000E505D /* JLFGKComponent+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLFGKComponent+Private.m"; sourceTree = "<group>"; };
 		2760624B1B37CE96000E505D /* ComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentTests.m; sourceTree = "<group>"; };
+		2769EBC21B6EAD7500CADEEB /* JLFGKRandomSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKRandomSource.h; sourceTree = "<group>"; };
+		2769EBC31B6EAD7500CADEEB /* JLFGKRandomSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKRandomSource.m; sourceTree = "<group>"; };
+		2769EBC91B6EAE0800CADEEB /* JLFGKSystemRandomSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKSystemRandomSource.h; sourceTree = "<group>"; };
+		2769EBCA1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKSystemRandomSource.m; sourceTree = "<group>"; };
+		2769EBD01B6EAE6500CADEEB /* JLFGKRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKRandom.h; sourceTree = "<group>"; };
+		2769EBD21B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFGKLinearCongruentialRandomSource.h; sourceTree = "<group>"; };
+		2769EBD31B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFGKLinearCongruentialRandomSource.m; sourceTree = "<group>"; };
 		277F1DB41B58163700AC8981 /* GeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeometryTests.m; sourceTree = "<group>"; };
 		277F1DB71B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLFGKPolygonObstacle+Geometry.h"; sourceTree = "<group>"; };
 		277F1DB81B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLFGKPolygonObstacle+Geometry.m"; sourceTree = "<group>"; };
@@ -495,6 +518,8 @@
 				27AD86F61B5370970009489D /* JLFGKGridGraph.m */,
 				27AD86F71B5370970009489D /* JLFGKGridGraphNode.h */,
 				27AD86F81B5370970009489D /* JLFGKGridGraphNode.m */,
+				2769EBD21B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.h */,
+				2769EBD31B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m */,
 				2720D2FC1B5705A90088BEE1 /* JLFGKObstacle.h */,
 				2720D2FD1B5705A90088BEE1 /* JLFGKObstacle.m */,
 				27B9362F1B576414007FEB54 /* JLFGKObstacleGraph.h */,
@@ -507,6 +532,9 @@
 				2720D30B1B5706710088BEE1 /* JLFGKPolygonObstacle.m */,
 				277F1DB71B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h */,
 				277F1DB81B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.m */,
+				2769EBD01B6EAE6500CADEEB /* JLFGKRandom.h */,
+				2769EBC21B6EAD7500CADEEB /* JLFGKRandomSource.h */,
+				2769EBC31B6EAD7500CADEEB /* JLFGKRandomSource.m */,
 				27B9C3C41B45C0B600B61989 /* JLFGKSimplePriorityQueue.h */,
 				27B9C3C51B45C0B600B61989 /* JLFGKSimplePriorityQueue.m */,
 				27B7E4BD1B3E057500705D17 /* JLFGKState.h */,
@@ -515,6 +543,8 @@
 				27B7E4C61B3E079A00705D17 /* JLFGKState+Private.m */,
 				2712E4351B3E0ACE00B5A5F1 /* JLFGKStateMachine.h */,
 				2712E4361B3E0ACE00B5A5F1 /* JLFGKStateMachine.m */,
+				2769EBC91B6EAE0800CADEEB /* JLFGKSystemRandomSource.h */,
+				2769EBCA1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m */,
 			);
 			path = JLFGameplayKit;
 			sourceTree = "<group>";
@@ -623,6 +653,9 @@
 				27B936361B576437007FEB54 /* JLFGameplayKit.h in Headers */,
 				27AD86F91B5370970009489D /* JLFGKGridGraph.h in Headers */,
 				2720D30C1B5706710088BEE1 /* JLFGKPolygonObstacle.h in Headers */,
+				2769EBCB1B6EAE0800CADEEB /* JLFGKSystemRandomSource.h in Headers */,
+				2769EBD41B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.h in Headers */,
+				2769EBC41B6EAD7500CADEEB /* JLFGKRandomSource.h in Headers */,
 				27B936371B576437007FEB54 /* JLFGKComponent.h in Headers */,
 				27B9363A1B576437007FEB54 /* JLFGKGraph.h in Headers */,
 				27B936381B576437007FEB54 /* JLFGKComponentSystem.h in Headers */,
@@ -632,6 +665,7 @@
 				2720D3051B5705BF0088BEE1 /* JLFGKCircleObstacle.h in Headers */,
 				277F1DCF1B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.h in Headers */,
 				279928E91B5E0ABA005A8C75 /* JLFGKObstacleGraphUserNode.h in Headers */,
+				2769EBD11B6EAE6500CADEEB /* JLFGKRandom.h in Headers */,
 				27B936311B576414007FEB54 /* JLFGKObstacleGraph.h in Headers */,
 				277F1DC81B5AB30D00AC8981 /* JLFGKGraphNode2D+Private.h in Headers */,
 				277F1DB91B58168600AC8981 /* JLFGKPolygonObstacle+Geometry.h in Headers */,
@@ -901,6 +935,7 @@
 			files = (
 				27B7E4C31B3E064600705D17 /* StateMachineTests.m in Sources */,
 				2760624D1B37D06D000E505D /* JLFGKEntity.m in Sources */,
+				2769EBC61B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */,
 				279C7CFA1B3E59A400456EE4 /* JLFGKStateMachine.m in Sources */,
 				2720D3001B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
 				27B936331B57641E007FEB54 /* JLFGKObstacleGraph.m in Sources */,
@@ -911,10 +946,12 @@
 				2720D30E1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
 				2720D2F61B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
 				276062501B37D06D000E505D /* JLFGKComponent+Private.m in Sources */,
+				2769EBCD1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */,
 				277F1DBC1B58175A00AC8981 /* JLFGKPolygonObstacle+Geometry.m in Sources */,
 				27114D4B1B4627100087655C /* JLFGKSimplePriorityQueue.m in Sources */,
 				27D343DF1B45AA2800172A4D /* PathfindingTests.m in Sources */,
 				27AD86FD1B537D590009489D /* JLFGKGridGraph.m in Sources */,
+				2769EBD61B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */,
 				277F1DB51B58163700AC8981 /* GeometryTests.m in Sources */,
 				27B7E4C41B3E06AF00705D17 /* JLFGKState.m in Sources */,
 				27AD86FE1B537D590009489D /* JLFGKGridGraphNode.m in Sources */,
@@ -954,8 +991,11 @@
 				27E255F91B51DB6A00237994 /* JLFGKComponent.m in Sources */,
 				27E255FD1B51DB6A00237994 /* JLFGKGraph.m in Sources */,
 				2720D30D1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
+				2769EBD51B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */,
 				277F1DD01B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */,
 				27E255FC1B51DB6A00237994 /* JLFGKEntity.m in Sources */,
+				2769EBC51B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */,
+				2769EBCC1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */,
 				27E256011B51DB6A00237994 /* JLFGKState+Private.m in Sources */,
 				27E255FF1B51DB6A00237994 /* JLFGKSimplePriorityQueue.m in Sources */,
 				2720D2F51B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
@@ -982,8 +1022,11 @@
 				27E256511B51DDE400237994 /* JLFGKComponent.m in Sources */,
 				27E256551B51DDE400237994 /* JLFGKGraph.m in Sources */,
 				2720D30F1B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
+				2769EBD71B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */,
 				277F1DD21B5CBE7000AC8981 /* JLFGKObstacleGraphConnection.m in Sources */,
 				27E256541B51DDE400237994 /* JLFGKEntity.m in Sources */,
+				2769EBC71B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */,
+				2769EBCE1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */,
 				27E256591B51DDE400237994 /* JLFGKState+Private.m in Sources */,
 				27E256571B51DDE400237994 /* JLFGKSimplePriorityQueue.m in Sources */,
 				2720D2F71B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
@@ -1006,6 +1049,7 @@
 			files = (
 				27E2565D1B51DDE700237994 /* PriorityQueueTests.m in Sources */,
 				27B995F51B54C9770096234A /* JLFGKEntity.m in Sources */,
+				2769EBC81B6EAD7500CADEEB /* JLFGKRandomSource.m in Sources */,
 				27B995FB1B54C9770096234A /* JLFGKStateMachine.m in Sources */,
 				2720D3021B5705A90088BEE1 /* JLFGKObstacle.m in Sources */,
 				27B936351B57641E007FEB54 /* JLFGKObstacleGraph.m in Sources */,
@@ -1016,10 +1060,12 @@
 				2720D3101B5706710088BEE1 /* JLFGKPolygonObstacle.m in Sources */,
 				2720D2F81B5701060088BEE1 /* JLFGKGraphNode2D.m in Sources */,
 				27B995F71B54C9770096234A /* JLFGKGraphNode.m in Sources */,
+				2769EBCF1B6EAE0800CADEEB /* JLFGKSystemRandomSource.m in Sources */,
 				277F1DBE1B58175B00AC8981 /* JLFGKPolygonObstacle+Geometry.m in Sources */,
 				27B995F31B54C9770096234A /* JLFGKComponent+Private.m in Sources */,
 				27B995F81B54C9770096234A /* JLFGKSimplePriorityQueue.m in Sources */,
 				27E2565C1B51DDE700237994 /* PathfindingTests.m in Sources */,
+				2769EBD81B6EB4C600CADEEB /* JLFGKLinearCongruentialRandomSource.m in Sources */,
 				277F1DB61B58163A00AC8981 /* GeometryTests.m in Sources */,
 				27B995FA1B54C9770096234A /* JLFGKState+Private.m in Sources */,
 				27E2565B1B51DDE700237994 /* ComponentTests.m in Sources */,

@@ -7,6 +7,10 @@
 
 #pragma once
 
+#import "JLFGKRandom.h"
+#import "JLFGKRandomSource.h"
+#import "JLFGKLinearCongruentialRandomSource.h"
+
 #import "JLFGKEntity.h"
 #import "JLFGKComponent.h"
 #import "JLFGKComponentSystem.h"
