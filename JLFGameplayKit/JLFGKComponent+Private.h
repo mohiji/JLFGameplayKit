@@ -5,7 +5,6 @@
 //  Created by Jonathan Fischer on 6/21/15.
 //
 
-#import <Foundation/Foundation.h>
 #import "JLFGKComponent.h"
 
 @interface JLFGKComponent (Private)

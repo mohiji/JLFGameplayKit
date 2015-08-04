@@ -5,7 +5,7 @@
 //  Created by Jonathan Fischer on 8/2/15.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 @protocol JLFGKRandom <NSObject>
 

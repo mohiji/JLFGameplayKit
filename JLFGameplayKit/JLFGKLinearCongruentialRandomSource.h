@@ -7,7 +7,7 @@
 
 #import "JLFGKRandomSource.h"
 
-@interface JLFGKLinearCongruentialRandomSource : JLFGKRandomSource <NSCopying, NSSecureCoding>
+@interface JLFGKLinearCongruentialRandomSource : JLFGKRandomSource<NSCopying, NSSecureCoding>
 
 - (instancetype)init;
 - (instancetype)initWithSeed:(uint64_t)seed;
