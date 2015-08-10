@@ -5,7 +5,7 @@
 //  Created by Jonathan Fischer on 8/2/15.
 //
 
-#import <JLFGameplayKit/JLFGameplayKit.h>
+#import "JLFGKRandomSource.h"
 
 @interface JLFGKSystemRandomSource : JLFGKRandomSource
 
